@@ -4,6 +4,7 @@ namespace ExamForms.Models
 {
     public class Template
     {
+        [Key]
         public int TemplateId { get; set; }
 
         [Required]
@@ -20,12 +21,9 @@ namespace ExamForms.Models
         [MaxLength(500)]
         public string ImageUrl { get; set; }
 
-        public bool Public { get; set; } = false;
+        public string CreatedBy { get; set; }
 
-        public int CreatorId { get; set; }
-        public virtual User Creator { get; set; }
-
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
 
         public virtual ICollection<Question> Questions { get; set; }
         public virtual ICollection<Form> Forms { get; set; }

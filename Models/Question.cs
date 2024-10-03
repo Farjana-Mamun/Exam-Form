@@ -4,6 +4,7 @@ namespace ExamForms.Models
 {
     public class Question
     {
+        [Key]
         public int QuestionId { get; set; }
 
         public int TemplateId { get; set; }

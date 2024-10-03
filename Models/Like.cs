@@ -1,7 +1,10 @@
-﻿namespace ExamForms.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ExamForms.Models
 {
     public class Like
     {
+        [Key]
         public int LikeId { get; set; }
 
         public int TemplateId { get; set; }

@@ -6,6 +6,7 @@ namespace ExamForms.Models
 {
     public class User
     {
+        [Key]
         public int UserId { get; set; }
 
         [Required,MaxLength(100)]

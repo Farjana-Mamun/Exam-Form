@@ -1,7 +1,10 @@
-﻿namespace ExamForms.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ExamForms.Models
 {
     public class Comment
     {
+        [Key]
         public int CommentId { get; set; }
 
         public int TemplateId { get; set; }

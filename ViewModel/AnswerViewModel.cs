@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ExamForms.Models;
+using System.ComponentModel.DataAnnotations;
 
-namespace ExamForms.Models
+namespace ExamForms.ViewModel
 {
-    public class Answer
+    public class AnswerViewModel
     {
-        [Key]
         public int AnswerId { get; set; }
 
         public int FormId { get; set; }

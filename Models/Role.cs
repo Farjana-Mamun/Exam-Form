@@ -4,6 +4,7 @@ namespace ExamForms.Models
 {
     public class Role
     {
+        [Key]
         public int RoleId { get; set; }
 
         [Required]
