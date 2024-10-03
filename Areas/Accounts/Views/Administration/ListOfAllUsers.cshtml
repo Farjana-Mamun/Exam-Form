@@ -1,0 +1,83 @@
+﻿@using ExamForms.ViewModel.Account;
+@using System.Web.Mvc.Ajax
+@model ApplicationUserViewModel
+@{
+    ViewBag.Title = "Users";
+}
+
+<section class="header-background">
+    <div class="container">
+        @if (Model != null)
+        {
+            <div class="d-flex justify-content-between ps-3 pe-3">
+                <h3 class="fw-bold">List of all Users</h3>
+                <a class="btn-account mb-3" asp-action="SignInSignUp" asp-controller="Account">Add New User</a>
+            </div>
+            AjaxOptions ajaxOptions = new AjaxOptions
+                {
+                    UpdateTargetId = "replaceDiv",
+                    InsertionMode = InsertionMode.Replace
+                };
+
+            <div class="container">
+                @if (User.IsInRole("Admin"))
+                {
+                    <form asp-action="ListOfAllUsers" asp-controller="Administration" data-ajax="true"
+                          data-ajax-update="#replaceDiv" data-ajax-mode="replace" class="form-wrapper">
+                        <div class="" style="padding: 15px; font-size: 18px; background: #F8F8F8; border-start-start-radius: 5px; border-start-end-radius: 5px;">
+                            All users list are available here. To find any specific
+                            user search here with there name, username or email
+                        </div>
+                        <div class="" style="padding: 15px;">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <input name="firstName" class="form-control" placeholder="Name" />
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="userName" class="form-control" placeholder="Username" />
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="email" class="form-control" placeholder="E-mail" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-end p-2 pe-3" style="background: #F8F8F8; border-end-start-radius: 5px; border-end-end-radius: 5px;">
+                            <button type="submit" class="search-btn">Search</button>
+                        </div>
+                    </form>
+                }
+                <div id="replaceDiv">
+                    @await Html.PartialAsync("_UserTable", Model)
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="card">
+                <div class="card-header">
+                    No users created yet
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Use the button below to create a user</h5>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary" asp-action="SignUp" asp-controller="Account">Create User</a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<div class="modal" tabindex="-1" id="cvPopupModal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body"> </div>
+        </div>
+    </div>
+</div>
+
+<div id="delete_confirmation_modal_placeholder"></div>
+
+@section Scripts {
+    <script src="~/js/account.js"></script>
+}

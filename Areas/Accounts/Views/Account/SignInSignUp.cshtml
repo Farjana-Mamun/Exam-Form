@@ -1,0 +1,93 @@
+﻿@model ExamForms.ViewModel.Account.SignInAndSignUpViewModel
+@{
+    ViewBag.Title = "SignUp";
+}
+<link href="~/css/accounts/signinsignup.css" rel="stylesheet" />
+
+<section class="header-background">
+    <div class="container d-flex justify-content-center">
+        <div class="signup-container" id="container">
+
+            @Html.Partial("SignUp", Model.SignUpViewModel)
+            @Html.Partial("SignIn", Model.SignInViewModel)
+
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h2 class="m-0 mb-3 fw-bold">Welcome Back!</h2>
+                        <p>Sign in here to keep connected or use your account</p>
+                        <div class=" social-container">
+                            @{
+                                if (Model.ExternalLogins.Count == 0)
+                                {
+                                    <span>No external logins configured</span>
+                                }
+                                else
+                                {
+                                    <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" class="form-account w-100 p-0">
+                                        <div class="social-container">
+                                            @foreach (var provider in Model.ExternalLogins)
+                                            {
+                                                <button type="submit" class="btn-account social" name="provider"
+                                                        value="@provider.Name" title="Login with your @provider.DisplayName account">
+                                                    @provider.DisplayName
+                                                </button>
+                                            }
+                                        </div>
+                                    </form>
+                                }
+                            }
+                        </div>
+                        <button class="btn-account ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h2 class="m-0 mb-3 fw-bold">Welcome Back!</h2>
+                        <p>Signup and start journey with us or use your email for registration</p>
+                        <div class=" social-container">
+                            @{
+                                if (Model.ExternalLogins.Count == 0)
+                                {
+                                    <span>No external logins configured</span>
+                                }
+                                else
+                                {
+                                    <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" class="w-100 p-0">
+                                        <div class="social-container">
+                                            @foreach (var provider in Model.ExternalLogins)
+                                            {
+                                                <button type="submit" class="btn-account social" name="provider"
+                                                        value="@provider.Name" title="Login with your @provider.DisplayName account">
+                                                    @provider.DisplayName
+                                                </button>
+                                            }
+                                        </div>
+                                    </form>
+                                }
+                            }
+                        </div>
+                        @*<div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                        </div>*@
+                        <button class="btn-account ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        const container = $('#container');
+
+        $('#signUp').on('click', function () {
+            container.addClass("right-panel-active");
+        });
+
+        $('#signIn').on('click', function () {
+            container.removeClass("right-panel-active");
+        });
+    </script>
+}
