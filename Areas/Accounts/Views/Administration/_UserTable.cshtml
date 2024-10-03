@@ -1,14 +1,23 @@
-﻿@using ExamForms.ViewModel.Account;
-@model ApplicationUserViewModel
+﻿@using ExamForms.Constants
+@using ExamForms.ViewModel.Account;
+@model List<ApplicationUserViewModel>
 
 @{
     var i = 1;
 }
 
 <div class="">
-    <button id="btnDelete" class="btn btn-sm btn-danger">Delete</button>
-    <button id="btnBlock" class="btn btn-sm btn-warning">Block</button>
-    <button id="btnUnblock" class="btn btn-sm btn-success">Unblock</button>
+    <div class="">
+        <div class="" style="float: left;">
+            <button id="btnDelete" class="btn btn-sm btn-danger">Delete</button>
+            <button id="btnBlock" class="btn btn-sm btn-warning">Block</button>
+            <button id="btnUnblock" class="btn btn-sm btn-success">Unblock</button>
+        </div>
+        <div class="" style="float: right;">
+            <button id="btnAddToAdmin" class="btn btn-sm btn-primary">Add to Admin</button>
+            <button id="btnRemoveFromAdmin" class="btn btn-sm btn-secondary">Remove from Admin</button>
+        </div>
+    </div>    
 
     <table class="table">
         <thead>
@@ -21,13 +30,14 @@
                 <th>User Name</th>
                 <th>E-mail</th>
                 <th>Status</th>
+                <th>Access</th>
                 <th class="text-center">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in Model.ApplicationUsers)
+            @foreach (var user in Model)
             {
-                var lockOut = (@user.LockoutEnd.HasValue) ? "Blocked" : "Unblocked";
+                var lockOut = (@user.LockoutEnd.HasValue) ? "<span class=\"badge bg-success\">Blocked</span>" : "Unblocked";
                 <tr>
                     <td class="text-center">
                         <input class="form-check-input bodyCheckBox" type="checkbox" value="@user.Id">
@@ -36,7 +46,18 @@
                     <td>@Html.DisplayFor(x => user.FirstName) @Html.DisplayFor(x => user.LastName)</td>
                     <td>@Html.DisplayFor(x => user.UserName)</td>
                     <td>@Html.DisplayFor(x => user.Email)</td>
-                    <td class="">@lockOut</td>
+                    <td class="">
+                        @if (@user.LockoutEnd.HasValue)
+                        { <span class="badge bg-danger">Blocked</span> }
+                        else
+                        { <span class="badge bg-success">Active</span> }
+                    </td>
+                    <td class="">
+                        @if (@user.RoleName == Enums.AppRoleEnums.Admin.ToString())
+                        { <span class="badge bg-danger">@user.RoleName</span> }
+                        else
+                        { <span class="badge bg-success">@user.RoleName</span> }
+                    </td>
                     <td class="text-center">
                         <a class="btn btn-sm btn-info text-white">Info</a>
                         <a class="btn btn-sm btn-secondary"

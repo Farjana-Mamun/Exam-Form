@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using ExamForms.Models.Accounts;
+using Microsoft.AspNetCore.Identity;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,12 @@ namespace ExamForms.ViewModel.Account
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
+        public string? RoleName { get; set; }
 
         public bool? IsDeleted { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
-
-        public List<ApplicationUserViewModel>? ApplicationUsers { get; set; }
     }
 }

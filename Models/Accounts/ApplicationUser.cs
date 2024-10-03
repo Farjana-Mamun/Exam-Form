@@ -8,7 +8,7 @@ public class ApplicationUser : IdentityUser
 {
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
-    public string RoleId { get; set; } = string.Empty;
+    public string RoleName { get; set; } = string.Empty;
     public bool IsBlocked { get; set; }
     public string Language { get; set; } = string.Empty;
     public string Theme { get; set; } = string.Empty;

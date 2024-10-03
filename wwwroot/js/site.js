@@ -80,3 +80,43 @@ $('#btnUnblock').on('click', function () {
         }
     });
 });
+
+$('#btnAddToAdmin').on('click', function () {
+    var selectedIds = getSelectedUserIds();
+    if (selectedIds.length === 0) {
+        alert('No users selected!');
+        return;
+    }
+    $.ajax({
+        type: 'POST',
+        url: '/Accounts/Administration/AddToAdmin',
+        data: { userIds: selectedIds },
+        success: function (response) {
+            if (response.success) {
+                location.reload();
+            } else {
+                alert(response.message);
+            }
+        }
+    });
+});
+
+$('#btnRemoveFromAdmin').on('click', function () {
+    var selectedIds = getSelectedUserIds();
+    if (selectedIds.length === 0) {
+        alert('No users selected!');
+        return;
+    }
+    $.ajax({
+        type: 'POST',
+        url: '/Accounts/Administration/RemoveFromAdmin',
+        data: { userIds: selectedIds },
+        success: function (response) {
+            if (response.success) {
+                location.reload();
+            } else {
+                alert(response.message);
+            }
+        }
+    });
+});

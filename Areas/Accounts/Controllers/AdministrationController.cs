@@ -3,6 +3,7 @@ using ExamForms.Manager.Accounts;
 using ExamForms.Models.Accounts;
 using ExamForms.Utility;
 using ExamForms.ViewModel.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,20 +13,24 @@ using System.Security.Claims;
 namespace ExamForms.Areas.Accounts.Controllers
 {
     [Area(nameof(Accounts))]
+    [Authorize(Roles = "Admin")]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<ApplicationRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
         private readonly AdministrationManager administrationManager;
         private readonly ILogger<AdministrationController> logger;
 
         public AdministrationController(RoleManager<ApplicationRole> roleManager
             , UserManager<ApplicationUser> userManager
+            , SignInManager<ApplicationUser> signInManager
             , AdministrationManager _administrationManager
             , ILogger<AdministrationController> logger)
         {
             this.roleManager = roleManager;
             this.userManager = userManager;
+            this.signInManager = signInManager;
             this.administrationManager = _administrationManager;
             this.logger = logger;
         }
@@ -35,9 +40,8 @@ namespace ExamForms.Areas.Accounts.Controllers
         {
             try
             {
-                ApplicationUserViewModel applicationUserViewModel = new ApplicationUserViewModel();
-                var result = await administrationManager.GetUsersBySearchAsync(applicationUserViewModel);
-                applicationUserViewModel.ApplicationUsers = result;
+                List<ApplicationUserViewModel> applicationUserViewModel = new List<ApplicationUserViewModel>();
+                applicationUserViewModel = await administrationManager.GetUsersAsync();
                 return View(applicationUserViewModel);
             }
             catch (Exception)
@@ -52,23 +56,9 @@ namespace ExamForms.Areas.Accounts.Controllers
         {
             try
             {
-                ApplicationUserViewModel applicationUser = new ApplicationUserViewModel
-                {
-                    FirstName = firstName?.ToLower(),
-                    UserName = userName?.ToLower(),
-                    Email = email?.ToLower()
-                };
-                var result = await administrationManager.GetUsersBySearchAsync(applicationUser);
-                applicationUser.ApplicationUsers = result;
-
-                if (User.IsInRole("Admin"))
-                {
-                    return PartialView("_UserTable", applicationUser);
-                }
-                else
-                {
-                    return PartialView("_AddToCart", applicationUser);
-                }
+                List<ApplicationUserViewModel> applicationUserViewModel = new List<ApplicationUserViewModel>();
+                applicationUserViewModel = await administrationManager.GetUsersAsync();
+                return View(applicationUserViewModel);
             }
             catch (Exception)
             {
@@ -309,31 +299,53 @@ namespace ExamForms.Areas.Accounts.Controllers
             return View(model);
         }
 
+
         [HttpPost]
-        //[Authorize(Policy = "EditRolePolicy")]
-        public async Task<IActionResult> AssignRolesToUser(List<AssignRolesToUserViewModel> model, string userId)
+        public async Task<IActionResult> AddToAdmin(List<string> userIds)
         {
-            var user = await userManager.FindByIdAsync(userId);
-            if (user == null)
+            var users = userManager.Users.Where(u => userIds.Contains(u.Id)).ToList();
+            if (!users.Any() && users == null)
             {
-                ViewBag.ErrorMessage = $"User with id = {userId} cannot be found";
+                ViewBag.ErrorMessage = $"User with id = {userIds} cannot be found";
                 return View("NotFound");
             }
-            var roles = await userManager.GetRolesAsync(user);
-            var result = await userManager.RemoveFromRolesAsync(user, roles);
-            if (!result.Succeeded)
+            foreach (var user in users)
             {
-                ModelState.AddModelError("", "Cannot remove user existing roles");
-                return View(model);
+                var roles = await userManager.GetRolesAsync(user);
+                var result = await userManager.RemoveFromRolesAsync(user, roles);
+                if (result.Succeeded)
+                {
+                    result = await userManager.AddToRoleAsync(user, Enums.AppRoleEnums.Admin.ToString());
+                }
             }
-            result = await userManager.AddToRolesAsync(user,
-                        model.Where(x => x.IsSelected).Select(x => x.RoleName));
-            if (!result.Succeeded)
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromAdmin(List<string> userIds)
+        {
+            bool isSameUser = false;
+            var users = userManager.Users.Where(u => userIds.Contains(u.Id)).ToList();
+            if (!users.Any() && users == null)
             {
-                ModelState.AddModelError("", "Cannot add selected roles to user");
-                return View(model);
+                ViewBag.ErrorMessage = $"User with id = {userIds} cannot be found";
+                return View("NotFound");
             }
-            return RedirectToAction("EditUser", new { Id = userId });
+            foreach (var user in users)
+            {
+                var result = await userManager.RemoveFromRoleAsync(user, Enums.AppRoleEnums.Admin.ToString());
+                if (result.Succeeded)
+                {
+                    result = await userManager.AddToRoleAsync(user, Enums.AppRoleEnums.User.ToString());
+                }
+                if (user.UserName == User.Identity.Name) isSameUser = true;                    
+            }
+            if (isSameUser)
+            {
+                await signInManager.SignOutAsync();
+                return RedirectToAction("SignIn", "Account", new { area = "Accounts" });
+            }
+            return Json(new { success = true });
         }
 
         [HttpGet]
