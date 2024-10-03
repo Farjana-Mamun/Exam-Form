@@ -30,14 +30,22 @@ public class AdministrationManager
         this.userRepository = userRepository;
     }
 
-    public async Task<List<ApplicationUserViewModel>> GetUsersAsync()
+    public async Task<List<ApplicationUserViewModel>> GetUsersBySearchAsync(ApplicationUserViewModel applicationUser)
     {
         List<ApplicationUser> users = await userManager.Users.ToListAsync();
-        foreach (var user in users)
+        if (applicationUser.UserName != null)
         {
-            var roles = await userManager.GetRolesAsync(user);
-            user.RoleName = roles.FirstOrDefault();
+            users = users.Where(e => e.UserName.ToLower().Contains(applicationUser.UserName)).ToList();
+        }
+        if (applicationUser.Email != null)
+        {
+            users = users.Where(e => e.Email.ToLower().Contains(applicationUser.Email)).ToList();
         }
         return _mapper.Map<List<ApplicationUserViewModel>>(users);
+    }
+
+    internal Task<List<ApplicationUserViewModel>> GetUsersAsync()
+    {
+        throw new NotImplementedException();
     }
 }
