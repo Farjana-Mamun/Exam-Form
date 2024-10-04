@@ -285,6 +285,34 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.css",
+      "PackagePath": "staticwebassets\\lib\\tagify\\tagify.css"
+    },
+    {
+      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.esm.js",
+      "PackagePath": "staticwebassets\\lib\\tagify\\tagify.esm.js"
+    },
+    {
+      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\tagify\\tagify.esm.min.js"
+    },
+    {
+      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.js",
+      "PackagePath": "staticwebassets\\lib\\tagify\\tagify.js"
+    },
+    {
+      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.min.css",
+      "PackagePath": "staticwebassets\\lib\\tagify\\tagify.min.css"
+    },
+    {
+      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.min.js",
+      "PackagePath": "staticwebassets\\lib\\tagify\\tagify.min.js"
+    },
+    {
+      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.polyfills.min.js",
+      "PackagePath": "staticwebassets\\lib\\tagify\\tagify.polyfills.min.js"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ExamForms.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

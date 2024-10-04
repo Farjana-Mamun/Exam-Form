@@ -7,8 +7,7 @@ namespace ExamForms.ViewModel
     {
         public int QuestionId { get; set; }
 
-        public int TemplateId { get; set; }
-        public virtual Template Template { get; set; }
+        public int TemplateId { get; set; } = 0;
 
         [Required]
         [MaxLength(50)]
@@ -16,12 +15,13 @@ namespace ExamForms.ViewModel
 
         [Required]
         [MaxLength(255)]
-        public string Title { get; set; }
+        public string QuestionTitle { get; set; }
 
         public string Description { get; set; }
 
         public bool DisplayInTable { get; set; } = false;
 
         public int? SortOrder { get; set; }
+        public virtual Template Template { get; set; }
     }
 }

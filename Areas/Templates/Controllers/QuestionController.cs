@@ -3,16 +3,15 @@
 namespace ExamForms.Areas.Templates.Controllers
 {
     [Area(nameof(Templates))]
-    public class TemplateController : Controller
+    public class QuestionController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult Create()
+        public IActionResult AddQuestionModal()
         {
-            return View();
+            return PartialView("~/Areas/Templates/Views/Shared/_TemplateQuestionAddModal.cshtml");
         }
     }
 }

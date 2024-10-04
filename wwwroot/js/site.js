@@ -1,4 +1,27 @@
 ﻿
+$(document).ready(function () {
+    
+});
+
+function addQuestion() {
+    $.ajax({
+        url: '/Templates/Question/AddQuestionModal',
+        type: 'GET',
+        success: function (data) {
+            console.log(data);
+            $("#addQuestion_modal_placeholder").html(data);
+            $("#questionModal").modal('show');
+        },
+        error: function () {
+            alert("An error occurred while loading the modal.");
+        }
+    });
+}
+
+$('#addQuestionBtn').on('click', function () {
+    $("#questionModal").modal('show');
+})
+
 $('#headerCheckBox').on('change', function () {
     $('.bodyCheckBox').prop('checked', this.checked);
 });

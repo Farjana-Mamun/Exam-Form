@@ -65,6 +65,19 @@
         "css/boxicons.min.css",
         "css/boxicons.css"
       ]
+    },
+    {
+      "library": "tagify@4.31.3",
+      "destination": "wwwroot/lib/tagify/",
+      "files": [
+        "tagify.css",
+        "tagify.esm.js",
+        "tagify.esm.min.js",
+        "tagify.js",
+        "tagify.min.css",
+        "tagify.min.js",
+        "tagify.polyfills.min.js"
+      ]
     }
   ]
 }
