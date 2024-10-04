@@ -20,3 +20,32 @@ html {
 body {
   margin-bottom: 60px;
 }*/
+/* Container for the form template */
+.form-template {
+    margin-top: 20px;
+}
+
+/* Center the search bar and limit its width */
+.search-bar {
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Custom active tab style */
+.nav-pills .nav-link.active {
+    background-color: #0d6efd;
+}
+
+/* Card styling for templates and forms */
+.template-card {
+    margin-top: 1rem;
+}
+
+.template-header {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.template-description {
+    margin-bottom: 1rem;
+}
