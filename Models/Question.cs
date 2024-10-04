@@ -1,27 +1,25 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace ExamForms.Models
+namespace ExamForms.Models;
+
+public partial class Question
 {
-    public class Question
-    {
-        [Key]
-        public int QuestionId { get; set; }
+    public int QuestionId { get; set; }
 
-        public int TemplateId { get; set; }
-        public virtual Template Template { get; set; }
+    public int TemplateId { get; set; }
 
-        [Required]
-        [MaxLength(50)]
-        public string QuestionType { get; set; } // SingleLine, MultiLine, Integer, Checkbox
+    public string QuestionType { get; set; } = null!;
 
-        [Required]
-        [MaxLength(255)]
-        public string QuestionTitle { get; set; }
+    public string QuestionTitle { get; set; } = null!;
 
-        public string Description { get; set; }
+    public string Description { get; set; } = null!;
 
-        public bool DisplayInTable { get; set; } = false;
+    public bool DisplayInTable { get; set; }
 
-        public int? SortOrder { get; set; }
-    }
+    public int? SortOrder { get; set; }
+
+    public virtual ICollection<QuestionOption> QuestionOptions { get; set; } = new List<QuestionOption>();
+
+    public virtual Template Template { get; set; } = null!;
 }

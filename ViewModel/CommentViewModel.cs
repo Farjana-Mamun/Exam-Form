@@ -10,7 +10,6 @@ namespace ExamForms.ViewModel
         public virtual Template Template { get; set; }
 
         public int UserId { get; set; }
-        public virtual User User { get; set; }
 
         public string CommentText { get; set; }
 

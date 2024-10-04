@@ -12,6 +12,9 @@ var connectionString = builder.Configuration.GetConnectionString("DB") ?? throw 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
+builder.Services.AddDbContext<ExamFormDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
 builder.Services.AddDbContext<IdentityContext>(options =>
     options.UseSqlServer(connectionString));
 

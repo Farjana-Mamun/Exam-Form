@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ExamForms.ViewModel
 {
-    public class QuestionOptionsViewModel
+    public class QuestionOptionViewModel
     {
-        public int QuestionOptionsId { get; set; }
+        public int QuestionOptionId { get; set; }
         public int QuestionId { get; set; }
 
-        public string QuestionOption { get; set; }
+        public string OptionName { get; set; }
         public bool IsCorrectAnswer { get; set; }
     }
 }

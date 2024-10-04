@@ -15,7 +15,7 @@
                       id="FormCourseQuestion"
                       method="post" class="form">
                     @Html.HiddenFor(c => c.QuestionId)
-                    @* <input type="hidden" name="CourseId" id="course_question_course_id" value="@Model.TemplateId" /> *@
+                    <input type="hidden" name="CourseId" id="course_question_course_id" value="@Model?.TemplateId" />
 
                     <div class="row m-0">
                         <div class="form-group">
@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-group">
                             <select class="form-control form-control-select" id="CourseQuestion_QuestionTypeId" name="QuestionType" required="required">
-                                @* <option value="">Select Question Type</option>
+                                <option value="">Select Question Type</option>
                                 @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Yes_No.ToString())
                                 {
                                     <option value="@Enums.TemplateQuestionTypeEnum.Yes_No.ToString()" selected>Yes/No</option>
@@ -87,7 +87,7 @@
                                 else
                                 {
                                     <option value="@Enums.TemplateQuestionTypeEnum.Image_Question.ToString()">Image Question</option>
-                                } *@
+                                }
                             </select>
                             @Html.ValidationMessageFor(m => m.QuestionType)
                         </div>
