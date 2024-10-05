@@ -1,141 +1,48 @@
 ﻿@using ExamForms.Constants
+@using static ExamForms.Constants.Enums
 @model ExamForms.ViewModel.QuestionViewModel
 
 
 <div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="questionModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form data-ajax-url="@Url.Action("Save", "Question", new {Area = "Templates"})"
-                      data-ajax="true"
-                      id="FormCourseQuestion"
-                      method="post" class="form">
-                    @Html.HiddenFor(c => c.QuestionId)
-                    <input type="hidden" name="CourseId" id="course_question_course_id" value="@Model?.TemplateId" />
-
-                    <div class="row m-0">
-                        <div class="form-group">
-                            <div class="mdc-text-field mdc-text-field--textarea w-100">
-                                @Html.EditorFor(x => x.QuestionTitle, new { htmlAttributes = new { placeholder = "Question title", id = "questionTitle", @class = "form-control", required = "required" } })
-                            </div>
-                            @Html.ValidationMessageFor(x => x.QuestionTitle, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control form-control-select" id="CourseQuestion_QuestionTypeId" name="QuestionType" required="required">
-                                <option value="">Select Question Type</option>
-                                @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Yes_No.ToString())
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Yes_No.ToString()" selected>Yes/No</option>
-                                }
-                                else
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Yes_No.ToString()">Yes/No</option>
-                                }
-
-                                @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.True_False.ToString())
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.True_False.ToString()" selected>True/False</option>
-                                }
-                                else
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.True_False.ToString()">True/False</option>
-                                }
-
-                                @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Multiple_Option.ToString())
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Multiple_Option.ToString()" selected>Single Option</option>
-                                }
-                                else
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Multiple_Option.ToString()">Single Option</option>
-                                }
-
-                                @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Multiple_Image_Option.ToString())
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Multiple_Image_Option.ToString()" selected>Single Option (Image)</option>
-                                }
-                                else
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Multiple_Image_Option.ToString()">Single Option (Image)</option>
-                                }
-
-                                @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Text.ToString())
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Text.ToString()" selected>Text</option>
-                                }
-                                else
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Text.ToString()">Text</option>
-                                }
-
-                                @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Multiple_Checkbox.ToString())
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Multiple_Checkbox.ToString()" selected>Multiple Choice</option>
-                                }
-                                else
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Multiple_Checkbox.ToString()">Multiple Choice</option>
-                                }
-                                @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Image_Question.ToString())
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Image_Question.ToString()" selected>Image Question</option>
-                                }
-                                else
-                                {
-                                    <option value="@Enums.TemplateQuestionTypeEnum.Image_Question.ToString()">Image Question</option>
-                                }
-                            </select>
-                            @Html.ValidationMessageFor(m => m.QuestionType)
-                        </div>
-@* 
-                        <div id="div_question_detail_template">
-                            @if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Yes_No.ToString())
-                            {
-                                @Html.Partial("_QuestionDetailYesNoTemplate", Model)
-                            }
-                            else if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.True_False.ToString())
-                            {
-                                @Html.Partial("_QuestionDetailTrueFalseTemplate", Model)
-                            }
-                            else if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Multiple_Option.ToString())
-                            {
-                                @Html.Partial("_QuestionDetailSingleOptionTemplate", Model)
-                            }
-                            else if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Multiple_Image_Option.ToInt())
-                            {
-                                @Html.Partial("_QuestionDetailSingleImageOptionTemplate", Model)
-                            }
-                            else if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Multiple_Checkbox.ToInt())
-                            {
-                                @Html.Partial("_QuestionDetailCheckBoxTemplate", Model)
-                            }
-                            else if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Text.ToInt())
-                            {
-                                @Html.Partial("_QuestionDetailTextBoxTemplate", Model)
-                            }
-                            else if (Model.QuestionType == Enums.TemplateQuestionTypeEnum.Image_Question.ToInt())
-                            {
-                                @Html.Partial("_QuestionDetailImageQuestionTemplate", Model)
-                            }
-                        </div> *@
-
-                        <div class="form-group">
-                            <label for="answerDescriptionEditor">Answer Description (If any)</label>
-                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control lms-text-area", id = "descriptionEditor", rows = "3" })
-                        </div>
+            <form>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="questionModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.EditorFor(x => x.TemplateId, new { htmlAttributes = new { id = "questionTemplateId", type = "hidden" } })
+                    <div class="mb-3">
+                        <label class="form-label" for="questionTitle">@Html.DisplayNameFor(x => x.QuestionTitle)</label>
+                        @Html.EditorFor(x => x.QuestionTitle, new { htmlAttributes = new { placeholder = "Question title", id = "questionTitle", @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(x => x.QuestionTitle, "", new { @class = "text-danger" })
                     </div>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    @* <button type="button" class="btn btn-dark fw-600 float-right btn-add-question-to-course">Save</button> *@
+                    <div class="mb-3">
+                        <label class="form-label" for="questionType">@Html.DisplayNameFor(x => x.QuestionType)</label>
+                        @Html.DropDownListFor(model => model.QuestionTypeEnum,
+                                 new SelectList(Enum.GetValues(typeof(TemplateQuestionTypeEnum)).Cast<TemplateQuestionTypeEnum>().Select(q => new { Id = (int)q, Name = q.ToString() }), "Id", "Name"),
+                                 "-- Select question type --",
+                                 new { @class = "form-control", id = "questionType", onchange = "questionTypeEvent(this)" })
+                        @Html.ValidationMessageFor(x => x.QuestionType, "", new { @class = "text-danger" })
+                    </div>
 
-                </form>
-            </div>
-            <div class="modal-footer">
-            </div>
+                    <div id="add_question_checkbox_modal_placeholder"></div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="questionDescription">@Html.DisplayNameFor(x => x.Description)</label>
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", id = "questionDescription" })
+                    </div>
+                    <div class="mb-3">
+                        @Html.CheckBoxFor(x => x.IsDisplayed, new { id = "isDisplayed", @class = "form-check-input" })
+                        <label class="form-label ms-3" for="isDisplayed">@Html.DisplayNameFor(x => x.IsDisplayed)</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

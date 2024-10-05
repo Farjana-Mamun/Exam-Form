@@ -1,27 +1,31 @@
-﻿using ExamForms.Models;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using static ExamForms.Constants.Enums;
 
-namespace ExamForms.ViewModel
+namespace ExamForms.ViewModel;
+
+public partial class QuestionViewModel
 {
-    public class QuestionViewModel
-    {
-        public int QuestionId { get; set; }
+    public int QuestionId { get; set; }
 
-        public int TemplateId { get; set; } = 0;
+    public int TemplateId { get; set; }
+    [Display(Name = "Question Title")]
 
-        [Required]
-        [MaxLength(50)]
-        public string QuestionType { get; set; } // SingleLine, MultiLine, Integer, Checkbox
+    public string QuestionTitle { get; set; } = null!;
 
-        [Required]
-        [MaxLength(255)]
-        public string QuestionTitle { get; set; }
+    [Display(Name = "Question Type")]
+    public string QuestionType { get; set; } = null!;
+    public int SelectedOptionId { get; set; }
 
-        public string Description { get; set; }
+    public string Description { get; set; } = null!;
 
-        public bool DisplayInTable { get; set; } = false;
+    [Display(Name = "Is displayed in the table of the filled-out forms?")]
+    public bool IsDisplayed { get; set; }
+    public int DisplayOrder { get; set; }
 
-        public int? SortOrder { get; set; }
-        public virtual Template Template { get; set; }
-    }
+    public TemplateQuestionTypeEnum QuestionTypeEnum { get; set; }
+    public virtual ICollection<QuestionOptionViewModel> QuestionOptions { get; set; } = new List<QuestionOptionViewModel>();
+
+    public virtual TemplateViewModel Template { get; set; } = null!;
 }

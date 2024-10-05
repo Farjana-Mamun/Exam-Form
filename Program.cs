@@ -1,4 +1,5 @@
 using ExamForms.Data;
+using ExamForms.Manager;
 using ExamForms.Manager.Accounts;
 using ExamForms.Models.Accounts;
 using ExamForms.Repository;
@@ -34,8 +35,10 @@ builder.Services.AddScoped<UserManager<ApplicationUser>, UserManager<Application
 
 builder.Services.AddTransient<AccountManager>();
 builder.Services.AddTransient<AdministrationManager>();
+builder.Services.AddTransient<TemplateManager>();
 
 builder.Services.AddTransient<UserRepository>();
+builder.Services.AddTransient<TemplateRepository>();
 
 var app = builder.Build();
 

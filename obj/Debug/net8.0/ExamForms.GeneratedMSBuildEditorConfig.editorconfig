@@ -78,6 +78,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Reyas Project/NEW/Areas/Templates/Views/Shared/_AddQuestionCheckboxModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFNoYXJlZFxfQWRkUXVlc3Rpb25DaGVja2JveE1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Reyas Project/NEW/Areas/Templates/Views/Shared/_TemplateQuestionAddModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFNoYXJlZFxfVGVtcGxhdGVRdWVzdGlvbkFkZE1vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

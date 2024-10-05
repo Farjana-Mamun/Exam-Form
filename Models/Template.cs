@@ -11,11 +11,9 @@ public partial class Template
 
     public string Description { get; set; } = null!;
 
-    public string Topic { get; set; } = null!;
+    public int TopicId { get; set; }
 
-    public string Tags { get; set; } = null!;
-
-    public string ImageUrl { get; set; } = null!;
+    public string Image { get; set; } = null!;
 
     public string AccessMode { get; set; } = null!;
 

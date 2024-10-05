@@ -78,6 +78,10 @@
         "tagify.min.js",
         "tagify.polyfills.min.js"
       ]
+    },
+    {
+      "library": "quill@2.0.2",
+      "destination": "wwwroot/lib/quill/"
     }
   ]
 }

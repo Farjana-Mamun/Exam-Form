@@ -1,14 +1,17 @@
-﻿using ExamForms.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace ExamForms.ViewModel
+namespace ExamForms.ViewModel;
+
+public partial class QuestionOptionViewModel
 {
-    public class QuestionOptionViewModel
-    {
-        public int QuestionOptionId { get; set; }
-        public int QuestionId { get; set; }
+    public int QuestionOptionId { get; set; }
 
-        public string OptionName { get; set; }
-        public bool IsCorrectAnswer { get; set; }
-    }
+    public int QuestionId { get; set; }
+
+    public string OptionName { get; set; } = null!;
+
+    public bool IsCorrectAnswer { get; set; }
+
+    public virtual QuestionViewModel Question { get; set; } = null!;
 }

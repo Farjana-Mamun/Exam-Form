@@ -85,9 +85,9 @@ public class ExamFormDbContext : DbContext
 
         modelBuilder.Entity<Template>(entity =>
         {
-            entity.Property(e => e.ImageUrl).HasMaxLength(500);
+            entity.Property(e => e.Image).HasMaxLength(500);
             entity.Property(e => e.Title).HasMaxLength(255);
-            entity.Property(e => e.Topic).HasMaxLength(100);
+            entity.Property(e => e.TopicId).HasMaxLength(100);
         });
 
         modelBuilder.Entity<TemplateSpecificUser>(entity =>
@@ -104,10 +104,10 @@ public class ExamFormDbContext : DbContext
         );
 
         modelBuilder.Entity<Tag>().HasData(
-            new Tag { TagId = 1, TagName = "Chemistry" },
-            new Tag { TagId = 2, TagName = "Biology" },
-            new Tag { TagId = 3, TagName = "Physics" },
-            new Tag { TagId = 4, TagName = "Quiz Test" }
+            new Tag { TagId = 1, TagName = "chemistry" },
+            new Tag { TagId = 2, TagName = "biology" },
+            new Tag { TagId = 3, TagName = "physics" },
+            new Tag { TagId = 4, TagName = "quiz Test" }
         );
     }
 }

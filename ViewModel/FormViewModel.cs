@@ -1,18 +1,19 @@
-﻿using ExamForms.Models;
+﻿using System;
+using System.Collections.Generic;
 
-namespace ExamForms.ViewModel
+namespace ExamForms.ViewModel;
+
+public partial class FormViewModel
 {
-    public class FormViewModel
-    {
-        public int FormId { get; set; }
+    public int FormId { get; set; }
 
-        public int TemplateId { get; set; }
-        public virtual Template Template { get; set; }
+    public int TemplateId { get; set; }
 
-        public int UserId { get; set; }
+    public int UserId { get; set; }
 
-        public DateTime SubmittedAt { get; set; } = DateTime.Now;
+    public DateTime SubmittedAt { get; set; }
 
-        public virtual ICollection<Answer> Answers { get; set; }
-    }
+    public virtual ICollection<AnswerViewModel> Answers { get; set; } = new List<AnswerViewModel>();
+
+    public virtual TemplateViewModel Template { get; set; } = null!;
 }

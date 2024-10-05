@@ -10,14 +10,14 @@ public partial class Question
     public int TemplateId { get; set; }
 
     public string QuestionType { get; set; } = null!;
+    public int SelectedOptionId { get; set; }
 
     public string QuestionTitle { get; set; } = null!;
 
     public string Description { get; set; } = null!;
 
-    public bool DisplayInTable { get; set; }
-
-    public int? SortOrder { get; set; }
+    public bool IsDisplayed { get; set; }
+    public int DisplayOrder { get; set; }
 
     public virtual ICollection<QuestionOption> QuestionOptions { get; set; } = new List<QuestionOption>();
 

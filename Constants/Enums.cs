@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ExamForms.Constants;
 
@@ -13,40 +14,16 @@ public class Enums
 
     public enum TemplateQuestionTypeEnum
     {
-        [Description("Yes/No")]
-        Yes_No = 1,
+        [Display(Name = "Single Line")]
+        Single_Line = 1,
 
-        [Description("Multiple Option")]
-        Multiple_Option = 2,
+        [Display(Name = "Multiple Line")]
+        Multiple_Line = 2,
 
-        [Description("Textarea")]
-        Text = 3,
+        [Display(Name = "Positive Integer")]
+        Positive_Integer = 3,
 
-        [Description("Multiple Checkbox")]
-        Multiple_Checkbox = 4,
-
-        [Description("Text")]
-        Date = 5,
-
-        [Description("Email")]
-        Email = 6,
-
-        [Description("Phone")]
-        Phone = 7,
-
-        [Description("Text Encrypt")]
-        TextEncrypt = 8,
-
-        [Description("Number")]
-        Number = 9,
-
-        [Description("Multiple Image Option")]
-        Multiple_Image_Option = 10,
-
-        [Description("Image Question")]
-        Image_Question = 11,
-
-        [Description("True/False")]
-        True_False = 12
+        [Display(Name = "Checkbox")]
+        Checkbox = 4,
     }
 }
