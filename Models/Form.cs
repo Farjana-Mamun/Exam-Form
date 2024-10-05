@@ -7,6 +7,10 @@ namespace ExamForms.Models
         [Key]
         public int FormId { get; set; }
 
+        [Required]
+        [StringLength(255)]
+        public string FormTitle { get; set; }
+
         public int TemplateId { get; set; }
         public virtual Template Template { get; set; }
 
