@@ -34,9 +34,9 @@ namespace ExamForms.Migrations.ExamFormDb
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Topic = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    TopicId = table.Column<int>(type: "int", maxLength: 100, nullable: false),
                     Tags = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     AccessMode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -87,6 +87,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     FormId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    FormTitle = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     TemplateId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     SubmittedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -131,10 +132,11 @@ namespace ExamForms.Migrations.ExamFormDb
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TemplateId = table.Column<int>(type: "int", nullable: false),
                     QuestionType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    SelectedOptionId = table.Column<int>(type: "int", nullable: false),
                     QuestionTitle = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DisplayInTable = table.Column<bool>(type: "bit", nullable: false),
-                    SortOrder = table.Column<int>(type: "int", nullable: true)
+                    IsDisplayed = table.Column<bool>(type: "bit", nullable: false),
+                    DisplayOrder = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -215,10 +217,10 @@ namespace ExamForms.Migrations.ExamFormDb
                 columns: new[] { "TagId", "TagName" },
                 values: new object[,]
                 {
-                    { 1, "Chemistry" },
-                    { 2, "Biology" },
-                    { 3, "Physics" },
-                    { 4, "Quiz Test" }
+                    { 1, "chemistry" },
+                    { 2, "biology" },
+                    { 3, "physics" },
+                    { 4, "quiz Test" }
                 });
 
             migrationBuilder.InsertData(

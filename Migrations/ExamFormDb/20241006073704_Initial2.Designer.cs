@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExamForms.Migrations.ExamFormDb
 {
     [DbContext(typeof(ExamFormDbContext))]
-    [Migration("20241004162709_Initial2")]
+    [Migration("20241006073704_Initial2")]
     partial class Initial2
     {
         /// <inheritdoc />
@@ -89,6 +89,11 @@ namespace ExamForms.Migrations.ExamFormDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FormId"));
 
+                    b.Property<string>("FormTitle")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
                     b.Property<DateTime>("SubmittedAt")
                         .HasColumnType("datetime2");
 
@@ -141,7 +146,10 @@ namespace ExamForms.Migrations.ExamFormDb
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("DisplayInTable")
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDisplayed")
                         .HasColumnType("bit");
 
                     b.Property<string>("QuestionTitle")
@@ -154,7 +162,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("SortOrder")
+                    b.Property<int>("SelectedOptionId")
                         .HasColumnType("int");
 
                     b.Property<int>("TemplateId")
@@ -212,22 +220,22 @@ namespace ExamForms.Migrations.ExamFormDb
                         new
                         {
                             TagId = 1,
-                            TagName = "Chemistry"
+                            TagName = "chemistry"
                         },
                         new
                         {
                             TagId = 2,
-                            TagName = "Biology"
+                            TagName = "biology"
                         },
                         new
                         {
                             TagId = 3,
-                            TagName = "Physics"
+                            TagName = "physics"
                         },
                         new
                         {
                             TagId = 4,
-                            TagName = "Quiz Test"
+                            TagName = "quiz Test"
                         });
                 });
 
@@ -254,7 +262,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<string>("Image")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
@@ -268,10 +276,9 @@ namespace ExamForms.Migrations.ExamFormDb
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("Topic")
-                        .IsRequired()
+                    b.Property<int>("TopicId")
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("int");
 
                     b.HasKey("TemplateId");
 
