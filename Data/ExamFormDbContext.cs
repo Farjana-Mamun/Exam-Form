@@ -34,7 +34,8 @@ public class ExamFormDbContext : DbContext
     public virtual DbSet<Topic> Topics { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=RASEL-PLACOVU\\SQLEXPRESS;Initial Catalog=ExamFormDB;User Id=sa;Password=12345;TrustServerCertificate=True;");
+        //=> optionsBuilder.UseSqlServer("Data Source=RASEL-PLACOVU\\SQLEXPRESS;Initial Catalog=ExamFormDB;User Id=sa;Password=12345;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=Farjana;Database=ExamFormDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

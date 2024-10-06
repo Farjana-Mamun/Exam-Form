@@ -13,6 +13,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\Exam.jpg",
+      "PackagePath": "staticwebassets\\images\\Exam.jpg"
+    },
+    {
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\Four.jpg",
+      "PackagePath": "staticwebassets\\images\\Four.jpg"
+    },
+    {
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\Math.jpg",
+      "PackagePath": "staticwebassets\\images\\Math.jpg"
+    },
+    {
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\One.jpg",
+      "PackagePath": "staticwebassets\\images\\One.jpg"
+    },
+    {
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\Three.jpg",
+      "PackagePath": "staticwebassets\\images\\Three.jpg"
+    },
+    {
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\Two.jpg",
+      "PackagePath": "staticwebassets\\images\\Two.jpg"
+    },
+    {
       "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\icons\\edit.svg",
       "PackagePath": "staticwebassets\\images\\icons\\edit.svg"
     },
@@ -25,43 +49,39 @@
       "PackagePath": "staticwebassets\\images\\icons\\trash.svg"
     },
     {
-<<<<<<< HEAD
-      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\js\\site.js",
-=======
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\images\\templateImages\\072989a0-f9ac-4e06-a3aa-82be44f85e27399810702_3626021167719263_3508352411570846729_n2.jpg",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\templateImages\\072989a0-f9ac-4e06-a3aa-82be44f85e27399810702_3626021167719263_3508352411570846729_n2.jpg",
       "PackagePath": "staticwebassets\\images\\templateImages\\072989a0-f9ac-4e06-a3aa-82be44f85e27399810702_3626021167719263_3508352411570846729_n2.jpg"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\images\\templateImages\\33486d0d-d5d8-46d6-8376-87408ce3fd6a399810702_3626021167719263_3508352411570846729_n2.jpg",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\templateImages\\33486d0d-d5d8-46d6-8376-87408ce3fd6a399810702_3626021167719263_3508352411570846729_n2.jpg",
       "PackagePath": "staticwebassets\\images\\templateImages\\33486d0d-d5d8-46d6-8376-87408ce3fd6a399810702_3626021167719263_3508352411570846729_n2.jpg"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\images\\templateImages\\74355709-6fd8-4984-8d59-f925426e3df2399810702_3626021167719263_3508352411570846729_n2.jpg",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\templateImages\\74355709-6fd8-4984-8d59-f925426e3df2399810702_3626021167719263_3508352411570846729_n2.jpg",
       "PackagePath": "staticwebassets\\images\\templateImages\\74355709-6fd8-4984-8d59-f925426e3df2399810702_3626021167719263_3508352411570846729_n2.jpg"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\images\\templateImages\\91ffb3a7-b70a-49e3-9a53-ab6b0de34260399810702_3626021167719263_3508352411570846729_n2.jpg",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\templateImages\\91ffb3a7-b70a-49e3-9a53-ab6b0de34260399810702_3626021167719263_3508352411570846729_n2.jpg",
       "PackagePath": "staticwebassets\\images\\templateImages\\91ffb3a7-b70a-49e3-9a53-ab6b0de34260399810702_3626021167719263_3508352411570846729_n2.jpg"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\images\\templateImages\\9c85c67d-b7d8-4fb6-a804-33e23158dcd5399810702_3626021167719263_3508352411570846729_n2.jpg",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\templateImages\\9c85c67d-b7d8-4fb6-a804-33e23158dcd5399810702_3626021167719263_3508352411570846729_n2.jpg",
       "PackagePath": "staticwebassets\\images\\templateImages\\9c85c67d-b7d8-4fb6-a804-33e23158dcd5399810702_3626021167719263_3508352411570846729_n2.jpg"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\images\\templateImages\\b9904d38-29fd-4a35-9635-c1878dc58fd4399810702_3626021167719263_3508352411570846729_n2.jpg",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\templateImages\\b9904d38-29fd-4a35-9635-c1878dc58fd4399810702_3626021167719263_3508352411570846729_n2.jpg",
       "PackagePath": "staticwebassets\\images\\templateImages\\b9904d38-29fd-4a35-9635-c1878dc58fd4399810702_3626021167719263_3508352411570846729_n2.jpg"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\images\\templateImages\\d392c8cb-acab-4940-b89c-6e2f3e1110f6399810702_3626021167719263_3508352411570846729_n2.jpg",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\images\\templateImages\\d392c8cb-acab-4940-b89c-6e2f3e1110f6399810702_3626021167719263_3508352411570846729_n2.jpg",
       "PackagePath": "staticwebassets\\images\\templateImages\\d392c8cb-acab-4940-b89c-6e2f3e1110f6399810702_3626021167719263_3508352411570846729_n2.jpg"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\js\\customLibrary.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\js\\customLibrary.js",
       "PackagePath": "staticwebassets\\js\\customLibrary.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\js\\site.js",
->>>>>>> 9729f68dfe627011d96c9a87e7655150ace38618
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
@@ -321,147 +341,147 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\jqueryui\\jquery-ui.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\jqueryui\\jquery-ui.js",
       "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\jqueryui\\jquery-ui.min.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\jqueryui\\jquery-ui.min.js",
       "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.min.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.bubble.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.bubble.css",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.bubble.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.bubble.css.map",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.bubble.css.map",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.bubble.css.map"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.bubble.min.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.bubble.min.css",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.bubble.min.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.core.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.core.css",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.core.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.core.css.map",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.core.css.map",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.core.css.map"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.core.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.core.js",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.core.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.core.js.map",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.core.js.map",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.core.js.map"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.core.min.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.core.min.css",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.core.min.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.core.min.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.core.min.js",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.core.min.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.js",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.js.map",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.js.map",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.js.map"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.min.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.min.js",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.min.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.snow.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.snow.css",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.snow.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.snow.css.map",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.snow.css.map",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.snow.css.map"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\quill\\quill.snow.min.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\quill\\quill.snow.min.css",
       "PackagePath": "staticwebassets\\lib\\quill\\quill.snow.min.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\README.md",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\README.md",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\README.md"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\dist\\table-dragger.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\dist\\table-dragger.js",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\dist\\table-dragger.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\dist\\table-dragger.js.map",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\dist\\table-dragger.js.map",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\dist\\table-dragger.js.map"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\dist\\table-dragger.min.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\dist\\table-dragger.min.js",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\dist\\table-dragger.min.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\license",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\license",
       "PackagePath": "staticwebassets\\lib\\table-dragger"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\package.json",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\package.json",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\package.json"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\src\\classes.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\src\\classes.js",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\src\\classes.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\src\\drag.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\src\\drag.js",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\src\\drag.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\src\\draggable-list.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\src\\draggable-list.js",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\src\\draggable-list.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\src\\index.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\src\\index.js",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\src\\index.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\src\\main.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\src\\main.css",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\src\\main.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\table-dragger\\src\\util.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\table-dragger\\src\\util.js",
       "PackagePath": "staticwebassets\\lib\\table-dragger\\src\\util.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\tagify\\tagify.css",
       "PackagePath": "staticwebassets\\lib\\tagify\\tagify.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.esm.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\tagify\\tagify.esm.js",
       "PackagePath": "staticwebassets\\lib\\tagify\\tagify.esm.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.esm.min.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\tagify\\tagify.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\tagify\\tagify.esm.min.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\tagify\\tagify.js",
       "PackagePath": "staticwebassets\\lib\\tagify\\tagify.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.min.css",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\tagify\\tagify.min.css",
       "PackagePath": "staticwebassets\\lib\\tagify\\tagify.min.css"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.min.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\tagify\\tagify.min.js",
       "PackagePath": "staticwebassets\\lib\\tagify\\tagify.min.js"
     },
     {
-      "Id": "D:\\Reyas Project\\NEW\\wwwroot\\lib\\tagify\\tagify.polyfills.min.js",
+      "Id": "F:\\Intern Developer .Net\\ASP .Net Core with C#\\Main Project\\ExamForms\\ExamForms\\wwwroot\\lib\\tagify\\tagify.polyfills.min.js",
       "PackagePath": "staticwebassets\\lib\\tagify\\tagify.polyfills.min.js"
     },
     {
