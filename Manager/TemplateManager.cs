@@ -20,6 +20,19 @@ namespace ExamForms.Manager
             this.mapper = mapper;
         }
 
+        public async Task<List<TemplateViewModel>> GettAllTemplateAsync()
+        {
+            try
+            {
+                var templates = await templateRepository.GetAllTemplate();
+                return mapper.Map<List<TemplateViewModel>>(templates);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<List<TopicViewModel>> GettAllTopic()
         {
             try

@@ -13,6 +13,18 @@ namespace ExamForms.Repository
             this.context = context;
         }
 
+        public async Task<List<Template>> GetAllTemplate()
+        {
+            try
+            {
+                return await context.Templates.ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<List<Topic>> GettAllTopic()
         {
             try

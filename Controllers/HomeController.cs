@@ -1,3 +1,4 @@
+using ExamForms.Manager;
 using ExamForms.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -6,16 +7,20 @@ namespace ExamForms.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly TemplateManager templateManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger
+            , TemplateManager templateManager)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.templateManager = templateManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var templates = await templateManager.GettAllTemplateAsync();
+            return View(templates);
         }
 
         public IActionResult Privacy()
