@@ -13,6 +13,29 @@ namespace ExamForms.Repository
             this.context = context;
         }
 
+        public async Task<List<Question>> GetAllQuestions()
+        {
+            try
+            {
+                return await context.Questions.OrderBy(x => x.DisplayOrder).ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
+        public async Task<int> AddTemplateQuestion(Question model)
+        {
+            try
+            {
+                await context.Questions.AddAsync(model);
+                return await context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

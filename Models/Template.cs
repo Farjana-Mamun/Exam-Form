@@ -13,6 +13,8 @@ public partial class Template
 
     public int TopicId { get; set; }
 
+    public string Tags { get; set; } = null!;
+
     public string Image { get; set; } = null!;
 
     public string AccessMode { get; set; } = null!;

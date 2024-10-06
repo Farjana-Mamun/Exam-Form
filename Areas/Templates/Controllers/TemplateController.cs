@@ -45,8 +45,8 @@ namespace ExamForms.Areas.Templates.Controllers
                 Image.CopyTo(new FileStream(serverFolder, FileMode.Create));
                 model.Image = "/" + folder;
             }
-            int id = await templateManager.CreateTemplateAsync(model, User.Identity);
-            return Json(new { message = "Success", id = id });
+            model.TemplateId = await templateManager.CreateTemplateAsync(model, User.Identity);
+            return Json(new { message = "Success", id = model.TemplateId });
         }
     }
 }

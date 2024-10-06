@@ -6,7 +6,7 @@
 {
     <div class="row">
         <div class="col-md-12 d-flex">
-            @Html.RadioButtonFor(x => x.SelectedOptionId, option.OptionName, new { id = "option_" + option.OptionName, @class = "form-check-input" })
+            @Html.RadioButtonFor(x => x.SelectedOptionId, option.QuestionOptionId, new { id = "option_" + option.OptionName, @class = "form-check-input" })
             <label class="form-label ms-3" for="option_@option.OptionName">@option.OptionName</label>
         </div>
     </div>

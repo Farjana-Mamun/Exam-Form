@@ -1712,3 +1712,5 @@ D:\Reyas Project\NEW\obj\Debug\net8.0\refint\ExamForms.dll
 D:\Reyas Project\NEW\obj\Debug\net8.0\ExamForms.pdb
 D:\Reyas Project\NEW\obj\Debug\net8.0\ExamForms.genruntimeconfig.cache
 D:\Reyas Project\NEW\obj\Debug\net8.0\ref\ExamForms.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\package-lock.json
+D:\Reyas Project\NEW\bin\Debug\net8.0\package.json

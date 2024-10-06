@@ -2,6 +2,7 @@
 using ExamForms.Models;
 using ExamForms.Repository;
 using ExamForms.ViewModel;
+using Microsoft.CodeAnalysis.FlowAnalysis;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Principal;
 
@@ -52,7 +53,9 @@ namespace ExamForms.Manager
                 model.CreatedBy = User.Name;
                 model.CreatedDate = DateTime.Now;
 
-                List<Tag> tags = model.Tags.Split(',').Select(tag => new Tag { TagName = tag.Trim().ToLower() }).ToList();
+                List<Tag> tags = new List<Tag>();
+                if (model.Tags != null)
+                    tags = model.Tags.Split(',').Select(tag => new Tag { TagName = tag.Trim().ToLower() }).ToList();
 
                 Template template = new Template();
                 template = mapper.Map<Template>(model);
