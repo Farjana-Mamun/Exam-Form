@@ -42,6 +42,7 @@ namespace ExamForms.Repository
             try
             {
                 await context.Templates.AddAsync(model);
+                await context.SaveChangesAsync();
 
                 var unavailableTags = tags
                     .Where(tag => !context.Tags.Select(t => t.TagName).ToList()
@@ -49,8 +50,11 @@ namespace ExamForms.Repository
                     .ToList();
 
                 if (unavailableTags.Any())
+                {
                     await context.Tags.AddRangeAsync(unavailableTags);
-                return await context.SaveChangesAsync();
+                    await context.SaveChangesAsync();
+                }
+                return model.TemplateId;
             }
             catch (Exception)
             {

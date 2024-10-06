@@ -1,6 +1,78 @@
 ﻿
+var templateId = 0;
+
 $(document).ready(function () {
 
+});
+
+$(function () {
+    $("#questionListSortable").sortable({
+        stop: function (event, ui) {
+            //$Module.reorderQuestionList(this);
+
+            //var questionList = [];
+            //var questionCount = 0;
+            //$(element).children(".question-item").each(function () {
+            //    var id = $(this).attr('data-question-id');
+            //    var question = {
+            //        SurveyQuestionId: id,
+            //        SurveyQuestionSetId: $(this).attr('data-question-set-id'),
+            //        DisplayOrder: ++questionCount,
+            //    }
+            //    questionList.push(question);
+            //});
+            //var procedure = {
+            //    ProcedureId: $("#module_setup_module_id").val(),
+            //    QuestionList: questionList
+            //}
+            //$.blockUI({});
+            //$.ajax({
+            //    url: "/Administration/ModuleSurvey/ReorderSurveyQuestion",
+            //    type: 'POST',
+            //    dataType: "json",
+            //    data: procedure,
+            //    beforeSend: function () {
+            //        //OpenAppProgressModal();
+            //    },
+            //    success: function (result) {
+            //        $.unblockUI({});
+            //        if (result.Success == false) {
+            //            //App.ToastrNotifierError(result.error);
+            //        }
+            //        else {
+            //            $Module.onQuestionListChanges(element);
+            //        }
+
+            //    },
+            //    error: function (error) {
+            //        $.unblockUI({});
+            //        console.log(error);
+            //    }
+
+            //});
+        }
+    });
+    $(".question-list").disableSelection();
+});
+
+$('#templateQuestionForm').on('submit', function (e) {
+    e.preventDefault();
+    var formData = new FormData($(this)[0]);
+    console.log(formData);
+   
+    $.ajax({
+        url: '/Templates/Question/AddTemplateQuestion',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            $("#question_list_sortable_placeholder").html(data);
+        },
+        error: function (xhr, status, error) {
+            console.error("AJAX Error:", error);
+        }
+    });
 });
 
 $('#templateSetupForm').on('submit', function (e) {
@@ -23,8 +95,7 @@ $('#templateSetupForm').on('submit', function (e) {
         processData: false,
         success: function (response) {
             if (response.message === "Success") {
-                console.log(response.id);
-                $('#questionTemplateId').val(response.id);
+                templateId = response.id;
                 new bootstrap.Tab($('#template-question-tab')).show();
             }
         },
@@ -58,6 +129,7 @@ $('#addQuestionBtn').on('click', function () {
         type: 'GET',
         success: function (data) {
             $("#addQuestion_modal_placeholder").html(data);
+            $('#questionTemplateId').val(templateId);
             $("#questionModal").modal('show');
         },
         error: function () {
