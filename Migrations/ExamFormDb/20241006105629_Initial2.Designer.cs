@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExamForms.Migrations.ExamFormDb
 {
     [DbContext(typeof(ExamFormDbContext))]
-    [Migration("20241006073704_Initial2")]
+    [Migration("20241006105629_Initial2")]
     partial class Initial2
     {
         /// <inheritdoc />
@@ -37,13 +37,12 @@ namespace ExamForms.Migrations.ExamFormDb
                         .HasColumnType("int");
 
                     b.Property<string>("AnswerText")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("FormId")
+                    b.Property<int?>("FormId")
                         .HasColumnType("int");
 
-                    b.Property<int>("QuestionId")
+                    b.Property<int?>("QuestionId")
                         .HasColumnType("int");
 
                     b.HasKey("AnswerId");
@@ -62,16 +61,15 @@ namespace ExamForms.Migrations.ExamFormDb
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentId"));
 
                     b.Property<string>("CommentText")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TemplateId")
+                    b.Property<int?>("TemplateId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("CommentId");
@@ -89,18 +87,13 @@ namespace ExamForms.Migrations.ExamFormDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FormId"));
 
-                    b.Property<string>("FormTitle")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<DateTime>("SubmittedAt")
+                    b.Property<DateTime?>("SubmittedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TemplateId")
+                    b.Property<int?>("TemplateId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("FormId");
@@ -118,13 +111,13 @@ namespace ExamForms.Migrations.ExamFormDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LikeId"));
 
-                    b.Property<DateTime>("LikedAt")
+                    b.Property<DateTime?>("LikedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TemplateId")
+                    b.Property<int?>("TemplateId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("LikeId");
@@ -143,29 +136,26 @@ namespace ExamForms.Migrations.ExamFormDb
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionId"));
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DisplayOrder")
+                    b.Property<int?>("DisplayOrder")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsDisplayed")
+                    b.Property<bool?>("IsDisplayed")
                         .HasColumnType("bit");
 
                     b.Property<string>("QuestionTitle")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("QuestionType")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("SelectedOptionId")
+                    b.Property<int?>("SelectedOptionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TemplateId")
+                    b.Property<int?>("TemplateId")
                         .HasColumnType("int");
 
                     b.HasKey("QuestionId");
@@ -183,14 +173,13 @@ namespace ExamForms.Migrations.ExamFormDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionOptionId"));
 
-                    b.Property<bool>("IsCorrectAnswer")
+                    b.Property<bool?>("IsCorrectAnswer")
                         .HasColumnType("bit");
 
                     b.Property<string>("OptionName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("QuestionId")
+                    b.Property<int?>("QuestionId")
                         .HasColumnType("int");
 
                     b.HasKey("QuestionOptionId");
@@ -209,8 +198,10 @@ namespace ExamForms.Migrations.ExamFormDb
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TagId"));
 
                     b.Property<string>("TagName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TemplateId")
+                        .HasColumnType("int");
 
                     b.HasKey("TagId");
 
@@ -235,7 +226,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         new
                         {
                             TagId = 4,
-                            TagName = "quiz Test"
+                            TagName = "quiz_test"
                         });
                 });
 
@@ -248,35 +239,29 @@ namespace ExamForms.Migrations.ExamFormDb
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TemplateId"));
 
                     b.Property<string>("AccessMode")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Tags")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("TopicId")
+                    b.Property<int?>("TopicId")
                         .HasMaxLength(100)
                         .HasColumnType("int");
 
@@ -293,11 +278,10 @@ namespace ExamForms.Migrations.ExamFormDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TemplateSpecificUserId"));
 
-                    b.Property<int>("TemplateId")
+                    b.Property<int?>("TemplateId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TemplateSpecificUserId");
@@ -316,7 +300,6 @@ namespace ExamForms.Migrations.ExamFormDb
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TopicId"));
 
                     b.Property<string>("TopicName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TopicId");
@@ -345,9 +328,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     b.HasOne("ExamForms.Models.Form", "Form")
                         .WithMany("Answers")
-                        .HasForeignKey("FormId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FormId");
 
                     b.Navigation("Form");
                 });
@@ -356,9 +337,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     b.HasOne("ExamForms.Models.Template", "Template")
                         .WithMany("Comments")
-                        .HasForeignKey("TemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TemplateId");
 
                     b.Navigation("Template");
                 });
@@ -367,9 +346,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     b.HasOne("ExamForms.Models.Template", "Template")
                         .WithMany("Forms")
-                        .HasForeignKey("TemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TemplateId");
 
                     b.Navigation("Template");
                 });
@@ -378,9 +355,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     b.HasOne("ExamForms.Models.Template", "Template")
                         .WithMany("Likes")
-                        .HasForeignKey("TemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TemplateId");
 
                     b.Navigation("Template");
                 });
@@ -389,9 +364,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     b.HasOne("ExamForms.Models.Template", "Template")
                         .WithMany("Questions")
-                        .HasForeignKey("TemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TemplateId");
 
                     b.Navigation("Template");
                 });
@@ -400,9 +373,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     b.HasOne("ExamForms.Models.Question", "Question")
                         .WithMany("QuestionOptions")
-                        .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("QuestionId");
 
                     b.Navigation("Question");
                 });
@@ -411,9 +382,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     b.HasOne("ExamForms.Models.Template", "Template")
                         .WithMany("TemplateSpecificUsers")
-                        .HasForeignKey("TemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TemplateId");
 
                     b.Navigation("Template");
                 });

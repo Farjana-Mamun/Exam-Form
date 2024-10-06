@@ -19,7 +19,8 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     TagId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TagName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    TagName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TemplateId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -32,14 +33,14 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     TemplateId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TopicId = table.Column<int>(type: "int", maxLength: 100, nullable: false),
-                    Tags = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    AccessMode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Title = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TopicId = table.Column<int>(type: "int", maxLength: 100, nullable: true),
+                    Tags = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    AccessMode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,7 +53,7 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     TopicId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TopicName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    TopicName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -65,10 +66,10 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     CommentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TemplateId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    CommentText = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    TemplateId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    CommentText = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -77,8 +78,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         name: "FK_Comments_Templates_TemplateId",
                         column: x => x.TemplateId,
                         principalTable: "Templates",
-                        principalColumn: "TemplateId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "TemplateId");
                 });
 
             migrationBuilder.CreateTable(
@@ -87,10 +87,9 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     FormId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FormTitle = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    TemplateId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    SubmittedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    TemplateId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    SubmittedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -99,8 +98,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         name: "FK_Forms_Templates_TemplateId",
                         column: x => x.TemplateId,
                         principalTable: "Templates",
-                        principalColumn: "TemplateId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "TemplateId");
                 });
 
             migrationBuilder.CreateTable(
@@ -109,9 +107,9 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     LikeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TemplateId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    LikedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    TemplateId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    LikedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -120,8 +118,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         name: "FK_Likes_Templates_TemplateId",
                         column: x => x.TemplateId,
                         principalTable: "Templates",
-                        principalColumn: "TemplateId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "TemplateId");
                 });
 
             migrationBuilder.CreateTable(
@@ -130,13 +127,13 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     QuestionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TemplateId = table.Column<int>(type: "int", nullable: false),
-                    QuestionType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    SelectedOptionId = table.Column<int>(type: "int", nullable: false),
-                    QuestionTitle = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDisplayed = table.Column<bool>(type: "bit", nullable: false),
-                    DisplayOrder = table.Column<int>(type: "int", nullable: false)
+                    TemplateId = table.Column<int>(type: "int", nullable: true),
+                    QuestionType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    SelectedOptionId = table.Column<int>(type: "int", nullable: true),
+                    QuestionTitle = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsDisplayed = table.Column<bool>(type: "bit", nullable: true),
+                    DisplayOrder = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -145,8 +142,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         name: "FK_Questions_Templates_TemplateId",
                         column: x => x.TemplateId,
                         principalTable: "Templates",
-                        principalColumn: "TemplateId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "TemplateId");
                 });
 
             migrationBuilder.CreateTable(
@@ -155,8 +151,8 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     TemplateSpecificUserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TemplateId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TemplateId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -165,8 +161,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         name: "FK_TemplateSpecificUsers_Templates_TemplateId",
                         column: x => x.TemplateId,
                         principalTable: "Templates",
-                        principalColumn: "TemplateId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "TemplateId");
                 });
 
             migrationBuilder.CreateTable(
@@ -175,9 +170,9 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     AnswerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FormId = table.Column<int>(type: "int", nullable: false),
-                    QuestionId = table.Column<int>(type: "int", nullable: false),
-                    AnswerText = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FormId = table.Column<int>(type: "int", nullable: true),
+                    QuestionId = table.Column<int>(type: "int", nullable: true),
+                    AnswerText = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AnswerInt = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -187,8 +182,7 @@ namespace ExamForms.Migrations.ExamFormDb
                         name: "FK_Answers_Forms_FormId",
                         column: x => x.FormId,
                         principalTable: "Forms",
-                        principalColumn: "FormId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "FormId");
                 });
 
             migrationBuilder.CreateTable(
@@ -197,9 +191,9 @@ namespace ExamForms.Migrations.ExamFormDb
                 {
                     QuestionOptionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    QuestionId = table.Column<int>(type: "int", nullable: false),
-                    OptionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsCorrectAnswer = table.Column<bool>(type: "bit", nullable: false)
+                    QuestionId = table.Column<int>(type: "int", nullable: true),
+                    OptionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsCorrectAnswer = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -208,19 +202,18 @@ namespace ExamForms.Migrations.ExamFormDb
                         name: "FK_QuestionOptions_Questions_QuestionId",
                         column: x => x.QuestionId,
                         principalTable: "Questions",
-                        principalColumn: "QuestionId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "QuestionId");
                 });
 
             migrationBuilder.InsertData(
                 table: "Tags",
-                columns: new[] { "TagId", "TagName" },
+                columns: new[] { "TagId", "TagName", "TemplateId" },
                 values: new object[,]
                 {
-                    { 1, "chemistry" },
-                    { 2, "biology" },
-                    { 3, "physics" },
-                    { 4, "quiz Test" }
+                    { 1, "chemistry", null },
+                    { 2, "biology", null },
+                    { 3, "physics", null },
+                    { 4, "quiz_test", null }
                 });
 
             migrationBuilder.InsertData(

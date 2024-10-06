@@ -2,6 +2,7 @@
 using ExamForms.Models;
 using ExamForms.ViewModel;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -22,9 +23,10 @@ namespace ExamForms.Areas.Templates.Controllers
             this.questionManager = questionManager;
             webHostEnvironment = _webHostEnvironment;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            return View();
+            var templates = await templateManager.GettAllTemplateAsync();
+            return View(templates);
         }
 
         public async Task<IActionResult> Create()
@@ -53,5 +55,6 @@ namespace ExamForms.Areas.Templates.Controllers
             model.TemplateId = await templateManager.CreateTemplateAsync(model, User.Identity);
             return Json(new { message = "Success", id = model.TemplateId });
         }
+        
     }
 }

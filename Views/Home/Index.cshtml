@@ -1,46 +1,29 @@
-﻿@model ExamForms.ViewModel.TemplateViewModel
-
+﻿@model IEnumerable<ExamForms.ViewModel.TemplateViewModel>
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container my-5">
+<div class="container my-4">
     <!-- Gallery of Latest Templates -->
     <h2 class="mb-4 text-center">Latest Templates</h2>
     <div class="row">
-        <!-- Template Card 1 -->
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm h-100">
-                <img src="/images/Two.jpg" class="card-img-top template-img" alt="Template Image">
-                <div class="card-body">
-                    <h5 class="card-title">Template 1</h5>
-                    <p class="card-text">This is a brief description of Template 1.</p>
-                    <p class="card-text"><small class="text-muted">Author: John Doe</small></p>
+        <!-- Template Card -->
+        @foreach (var template in Model.Take(4))
+        {
+            if (template != null && !string.IsNullOrEmpty(template.Title) && !string.IsNullOrEmpty(template.Image))
+            {
+                <div class="col-md-3">
+                    <div class="card mb-4 shadow-sm h-100">
+                        <img src="@template.Image" class="card-img-top template-img" alt="Template Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@template.Title</h5>
+                            <p class="card-text">@template.Description</p>
+                            <p class="card-text"><small class="text-muted">Author: @template.CreatedBy</small></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- Template Card 2 -->
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm h-100">
-                <img src="/images/Exam.jpg" class="card-img-top template-img" alt="Template Image">
-                <div class="card-body">
-                    <h5 class="card-title">Template 2</h5>
-                    <p class="card-text">This is a brief description of Template 2.</p>
-                    <p class="card-text"><small class="text-muted">Author: Jane Smith</small></p>
-                </div>
-            </div>
-        </div>
-        <!-- Template Card 3 -->
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm h-100">
-                <img src="/images/Three.jpg" class="card-img-top template-img" alt="Template Image">
-                <div class="card-body">
-                    <h5 class="card-title">Template 3</h5>
-                    <p class="card-text">This is a brief description of Template 3.</p>
-                    <p class="card-text"><small class="text-muted">Author: Sarah Lee</small></p>
-                </div>
-            </div>
-        </div>
+            }
+        }
     </div>
 
     <!-- Table of Top 5 Popular Templates -->
@@ -56,36 +39,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Popular Template 1</td>
-                    <td>Author A</td>
-                    <td>120</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Popular Template 2</td>
-                    <td>Author B</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Popular Template 3</td>
-                    <td>Author C</td>
-                    <td>95</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Popular Template 4</td>
-                    <td>Author D</td>
-                    <td>90</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Popular Template 5</td>
-                    <td>Author E</td>
-                    <td>85</td>
-                </tr>
+                @foreach (var templates in Model)
+                {
+                    if (templates != null && !string.IsNullOrEmpty(templates.Title))
+                    {
+                        <tr>
+                            <th scope="row">@templates.TemplateId</th>
+                            <td>@templates.Title</td>
+                            <td>@templates.CreatedBy</td>
+                            <td>100</td>
+                        </tr>
+                    }
+                }
             </tbody>
         </table>
     </div>
