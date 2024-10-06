@@ -1,4 +1,5 @@
 using ExamForms.Data;
+using ExamForms.Manager;
 using ExamForms.Manager.Accounts;
 using ExamForms.Models.Accounts;
 using ExamForms.Repository;
@@ -11,6 +12,9 @@ var connectionString = builder.Configuration.GetConnectionString("DB") ?? throw 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+builder.Services.AddDbContext<ExamFormDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddDbContext<IdentityContext>(options =>
     options.UseSqlServer(connectionString));
@@ -31,8 +35,10 @@ builder.Services.AddScoped<UserManager<ApplicationUser>, UserManager<Application
 
 builder.Services.AddTransient<AccountManager>();
 builder.Services.AddTransient<AdministrationManager>();
+builder.Services.AddTransient<TemplateManager>();
 
 builder.Services.AddTransient<UserRepository>();
+builder.Services.AddTransient<TemplateRepository>();
 
 var app = builder.Build();
 

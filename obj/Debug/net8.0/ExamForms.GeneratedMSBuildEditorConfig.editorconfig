@@ -70,12 +70,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWRtaW5pc3RyYXRpb25cX1VzZXJUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Shared/_AddQuestionCheckboxModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFNoYXJlZFxfQWRkUXVlc3Rpb25DaGVja2JveE1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Shared/_TemplateQuestionAddModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFNoYXJlZFxfVGVtcGxhdGVRdWVzdGlvbkFkZE1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Template/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFRlbXBsYXRlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Template/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFRlbXBsYXRlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/_ViewStart.cshtml]

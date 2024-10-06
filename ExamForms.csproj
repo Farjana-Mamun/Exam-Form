@@ -28,6 +28,7 @@
   <ItemGroup>
     <Folder Include="Areas\Templates\Data\" />
     <Folder Include="Areas\Templates\Models\" />
+    <Folder Include="wwwroot\images\templateImages\" />
   </ItemGroup>
 
 </Project>

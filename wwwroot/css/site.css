@@ -49,3 +49,21 @@ body {
 .template-description {
     margin-bottom: 1rem;
 }
+.tag-cloud a {
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #007bff;
+}
+
+    .tag-cloud a:hover {
+        color: #0056b3;
+    }
+
+.tag-cloud a {
+    font-size: calc(12px + 0.5vw);
+}
+
+
+
+

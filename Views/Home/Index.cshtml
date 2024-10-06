@@ -2,7 +2,79 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+    <title>Main Page - Template Gallery</title>
+    
+
+
+    <div class="container my-5">
+        <!-- Gallery of Latest Templates -->
+        <h2 class="mb-4">Latest Templates</h2>
+        <div class="row">
+            <!-- Template Card 1 -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="image1.jpg" class="card-img-top" alt="Template Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Template 1</h5>
+                        <p class="card-text">Description of the template goes here.</p>
+                        <p class="card-text"><small class="text-muted">Author: John Doe</small></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Template Card 2 -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="image2.jpg" class="card-img-top" alt="Template Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Template 2</h5>
+                        <p class="card-text">Description of the template goes here.</p>
+                        <p class="card-text"><small class="text-muted">Author: Jane Smith</small></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards for additional templates -->
+        </div>
+
+        <!-- Table of Top 5 Popular Templates -->
+        <h2 class="my-4">Top 5 Most Popular Templates</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Template Name</th>
+                    <th>Author</th>
+                    <th>Number of Filled Forms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Popular Template 1</td>
+                    <td>Author A</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Popular Template 2</td>
+                    <td>Author B</td>
+                    <td>100</td>
+                </tr>
+                <!-- Add rows for more popular templates -->
+            </tbody>
+        </table>
+
+        <!-- Tag Cloud -->
+        <h2 class="my-4">Tag Cloud</h2>
+        <div class="tag-cloud">
+            <a href="search-results.html?tag=quiz">Quiz</a>
+            <a href="search-results.html?tag=form">Form</a>
+            <a href="search-results.html?tag=survey">Survey</a>
+            <a href="search-results.html?tag=poll">Poll</a>
+            <!-- Add more tags as needed -->
+        </div>
+    </div>
+
+
+
+

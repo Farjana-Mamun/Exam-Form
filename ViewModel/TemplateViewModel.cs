@@ -1,33 +1,40 @@
-﻿using ExamForms.Models;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ExamForms.ViewModel
+namespace ExamForms.ViewModel;
+
+public partial class TemplateViewModel
 {
-    public class TemplateViewModel
-    {
-        public int TemplateId { get; set; }
+    public int TemplateId { get; set; }
 
-        [Required]
-        [MaxLength(255)]
-        public string Title { get; set; }
+    public string Title { get; set; } = null!;
 
-        public string Description { get; set; }
+    public string Description { get; set; } = null!;
 
-        [MaxLength(100)]
-        public string Topic { get; set; }
+    [Display(Name = "Topic")]
+    public int TopicId { get; set; }
 
-        public string Tags { get; set; }
+    public string Tags { get; set; } = null!;
 
-        [MaxLength(500)]
-        public string ImageUrl { get; set; }
+    public string Image { get; set; } = null!;
 
-        public string CreatedBy { get; set; }
+    [Display(Name = "Access Mode")]
 
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+    public string AccessMode { get; set; } = null!;
 
-        public virtual ICollection<Question> Questions { get; set; }
-        public virtual ICollection<Form> Forms { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<Like> Likes { get; set; }
-    }
+    public string CreatedBy { get; set; } = null!;
+
+    public DateTime CreatedDate { get; set; }
+
+    public virtual ICollection<CommentViewModel> Comments { get; set; } = new List<CommentViewModel>();
+    public virtual ICollection<TagViewModel> TagList { get; set; } = new List<TagViewModel>();
+
+    public virtual ICollection<FormViewModel> Forms { get; set; } = new List<FormViewModel>();
+
+    public virtual ICollection<LikeViewModel> Likes { get; set; } = new List<LikeViewModel>();
+
+    public virtual ICollection<QuestionViewModel> Questions { get; set; } = new List<QuestionViewModel>();
+
+    public virtual ICollection<TemplateSpecificUserViewModel> TemplateSpecificUsers { get; set; } = new List<TemplateSpecificUserViewModel>();
 }

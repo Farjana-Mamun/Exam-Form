@@ -12,29 +12,14 @@ public class IdentityContext : IdentityDbContext<ApplicationUser, ApplicationRol
         : base(options)
     { }
 
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(builder);
+        base.OnModelCreating(modelBuilder);
 
-        builder.Entity<ApplicationRole>().HasData(
-            new ApplicationRole
-            {
-                Id = "90df4184-8e50-41c6-a720-283922d6cdae",
-                Name = "Admin",
-                NormalizedName = "ADMIN"
-            },
-            new ApplicationRole
-            {
-                Id = "fd9b69ed-8f72-48c2-808a-07fb26619962",
-                Name = "User",
-                NormalizedName = "USER"
-            },
-            new ApplicationRole
-            {
-                Id = "6a7babe2-e03f-45da-8eb9-96a9f6d82f2d",
-                Name = "Anynomous",
-                NormalizedName = "ANYNOMOUS"
-            }
+        modelBuilder.Entity<ApplicationRole>().HasData(
+            new ApplicationRole { Id = "90df4184-8e50-41c6-a720-283922d6cdae", Name = "Admin", NormalizedName = "ADMIN" },
+            new ApplicationRole { Id = "fd9b69ed-8f72-48c2-808a-07fb26619962", Name = "User", NormalizedName = "USER" },
+            new ApplicationRole { Id = "6a7babe2-e03f-45da-8eb9-96a9f6d82f2d", Name = "Anynomous", NormalizedName = "ANYNOMOUS" }
         );
     }
 }
