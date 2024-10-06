@@ -36,9 +36,11 @@ builder.Services.AddScoped<UserManager<ApplicationUser>, UserManager<Application
 builder.Services.AddTransient<AccountManager>();
 builder.Services.AddTransient<AdministrationManager>();
 builder.Services.AddTransient<TemplateManager>();
+builder.Services.AddTransient<QuestionManager>();
 
 builder.Services.AddTransient<UserRepository>();
 builder.Services.AddTransient<TemplateRepository>();
+builder.Services.AddTransient<QuestionRepository>();
 
 var app = builder.Build();
 

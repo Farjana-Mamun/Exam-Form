@@ -21,9 +21,12 @@ namespace ExamForms.Areas.Templates.Controllers
         {
             return View();
         }
+
+        [HttpGet]
         public IActionResult AddQuestionModal()
         {
-            return PartialView("~/Areas/Templates/Views/Shared/_TemplateQuestionAddModal.cshtml");
+            QuestionViewModel model = new QuestionViewModel();
+            return PartialView("~/Areas/Templates/Views/Shared/_TemplateQuestionAddModal.cshtml", model);
         }
 
         public IActionResult AddQuestionCheckbox(int questionType)
@@ -51,10 +54,7 @@ namespace ExamForms.Areas.Templates.Controllers
 
         public async Task<IActionResult> AddTemplateQuestion(QuestionViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                model.QuestionId = await questionManager.AddTemplateQuestionAsync(model, User.Identity);
-            }
+            model.QuestionId = await questionManager.AddTemplateQuestionAsync(model, User.Identity);
             List<QuestionViewModel> questions = new List<QuestionViewModel>();
             questions = await questionManager.GetAllQuestionsAsync();
 

@@ -7,6 +7,11 @@ namespace ExamForms.ViewModel;
 
 public partial class QuestionViewModel
 {
+    public QuestionViewModel()
+    {
+        Template = new TemplateViewModel();
+    }
+
     public int QuestionId { get; set; }
 
     public int TemplateId { get; set; }
@@ -27,5 +32,5 @@ public partial class QuestionViewModel
     public TemplateQuestionTypeEnum QuestionTypeEnum { get; set; }
     public virtual ICollection<QuestionOptionViewModel> QuestionOptions { get; set; } = new List<QuestionOptionViewModel>();
 
-    public virtual TemplateViewModel Template { get; set; } = null!;
+    public virtual TemplateViewModel? Template { get; set; } = null!;
 }

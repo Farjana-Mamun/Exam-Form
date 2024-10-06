@@ -1,6 +1,6 @@
 ﻿@using ExamForms.Constants
 @using static ExamForms.Constants.Enums
-@model List<ExamForms.ViewModel.QuestionViewModel>
+@model IEnumerable<ExamForms.ViewModel.QuestionViewModel>
 
 <style>
     #questionListSortable {
@@ -12,42 +12,37 @@
     }
 
     #questionListSortable li {
-            padding: 10px;
-            border-bottom: 1px solid #c7c7c7;
-        }
+        padding: 10px;
+        border-bottom: 1px solid #c7c7c7;
+    }
 </style>
+@if (Model != null && Model.Any())
+{
 
-<ul id="questionListSortable">
-    <li class="ui-state-default ui-sortable-handle d-flex">
-        <p style="width: 65%; margin: 0;"># Question Title</p>
-        <p style="width: 15%; margin: 0;">Question Type</p>
-        <p style="width: 10%; margin: 0;" class="text-center">Is Displayed</p>
-        <p style="width: 10%; margin: 0; text-align: end;">Actions</p>
-    </li>
-    <li class="ui-state-default ui-sortable-handle d-flex">
-        <p style="width: 65%; margin: 0;"><i class='bx bx-menu me-2'></i>How are you?</p>
-        <p style="width: 15%; margin: 0;">Multiline Question</p>
-        <div style="width: 10%; text-align: center;">
-            <input type="checkbox" checked class="form-check-input" />
-        </div>
-        <div style="width: 10%">
-            <div class="float-end">
-                <button class="btn btn-sm btn-secondary" id="editTemplateQuestionBtn"><i class='bx bx-edit'></i></button>
-                <button class="btn btn-sm btn-danger" id="deleteTemplateQuestionBtn"><i class='bx bx-trash'></i></button>
-            </div>
-        </div>
-    </li>
-    @* @foreach (var data in Model)
-    {
-    <li class="ui-state-default ui-sortable-handle" data-question-id="@data.QuestionId" data-template-id="@data.TemplateId">
-    <i class='bx bx-menu me-2'></i>
-    @data.QuestionTitle
-    @data.QuestionType
-    @data.IsDisplayed
-    <div class="float-end">
-    <button class="btn btn-sm btn-secondary" id="editTemplateQuestionBtn"><i class='bx bx-edit'></i></button>
-    <button class="btn btn-sm btn-danger" id="deleteTemplateQuestionBtn"><i class='bx bx-trash'></i></button>
-    </div>
-    </li>
-    } *@
-</ul>
+    <ul id="questionListSortable">
+        <li class="ui-state-default ui-sortable-handle d-flex">
+            <p style="width: 65%; margin: 0;"># Question Title</p>
+            <p style="width: 15%; margin: 0;">Question Type</p>
+            <p style="width: 10%; margin: 0;" class="text-center">Is Displayed</p>
+            <p style="width: 10%; margin: 0; text-align: end;">Actions</p>
+        </li>
+        @foreach (var data in Model)
+        {
+            var checkbox = data.IsDisplayed ? "checked" : "";
+            <li class="ui-state-default ui-sortable-handle d-flex" data-question-id="@data.QuestionId" data-template-id="@data.TemplateId">
+                <p style="width: 65%; margin: 0;"><i class='bx bx-menu me-2'></i>@data.QuestionTitle</p>
+                <p style="width: 15%; margin: 0;">@data.QuestionType</p>
+                <div style="width: 10%; text-align: center;">
+                    <input type="checkbox" @checkbox class="form-check-input" />
+                </div>
+                <div style="width: 10%">
+                    <div class="float-end">
+                        <button class="btn btn-sm btn-secondary" id="editTemplateQuestionBtn"><i class='bx bx-edit'></i></button>
+                        <button class="btn btn-sm btn-danger" id="deleteTemplateQuestionBtn"><i class='bx bx-trash'></i></button>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+
+}

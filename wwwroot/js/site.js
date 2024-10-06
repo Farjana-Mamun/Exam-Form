@@ -67,7 +67,8 @@ $('#templateQuestionForm').on('submit', function (e) {
         contentType: false,
         processData: false,
         success: function (response) {
-            $("#question_list_sortable_placeholder").html(data);
+            $('#questionModal').modal('hide');
+            $('#question_list_sortable_placeholder').html(response);
         },
         error: function (xhr, status, error) {
             console.error("AJAX Error:", error);
@@ -113,8 +114,8 @@ function questionTypeEvent(element) {
             success: function (data) {
                 $("#add_question_checkbox_modal_placeholder").html(data);
             },
-            error: function () {
-                alert("An error occurred while loading the modal.");
+            error: function (e) {
+                alert("An error occurred while loading the modal." + e);
             }
         });
     }
@@ -132,8 +133,8 @@ $('#addQuestionBtn').on('click', function () {
             $('#questionTemplateId').val(templateId);
             $("#questionModal").modal('show');
         },
-        error: function () {
-            alert("An error occurred while loading the modal.");
+        error: function (e) {
+            alert("An error occurred while loading the modal." + e);
         }
     });
 })

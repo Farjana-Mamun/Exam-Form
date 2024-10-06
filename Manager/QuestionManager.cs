@@ -9,10 +9,10 @@ namespace ExamForms.Manager
     public class QuestionManager
     {
         private readonly QuestionRepository questionRepository;
-        private readonly Mapper mapper;
+        private readonly IMapper mapper;
 
         public QuestionManager(QuestionRepository questionRepository
-            , Mapper mapper)
+            , IMapper mapper)
         {
             this.questionRepository = questionRepository;
             this.mapper = mapper;

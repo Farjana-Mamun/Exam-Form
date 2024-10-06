@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ExamForms.Models;
-using ExamForms.Models.Accounts;
+﻿using ExamForms.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ExamForms.Data;
@@ -34,8 +31,8 @@ public partial class ExamFormDbContext : DbContext
     public virtual DbSet<Topic> Topics { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //=> optionsBuilder.UseSqlServer("Data Source=RASEL-PLACOVU\\SQLEXPRESS;Initial Catalog=ExamFormDB;User Id=sa;Password=12345;TrustServerCertificate=True;");
-        => optionsBuilder.UseSqlServer("Server=Farjana;Database=ExamFormDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
+        => optionsBuilder.UseSqlServer("Data Source=RASEL-PLACOVU\\SQLEXPRESS;Initial Catalog=ExamFormDB;User Id=sa;Password=12345;TrustServerCertificate=True;");
+        //=> optionsBuilder.UseSqlServer("Server=Farjana;Database=ExamFormDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

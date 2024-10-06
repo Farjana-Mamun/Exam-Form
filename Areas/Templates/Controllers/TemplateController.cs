@@ -11,13 +11,15 @@ namespace ExamForms.Areas.Templates.Controllers
     public class TemplateController : Controller
     {
         private readonly IWebHostEnvironment webHostEnvironment;
-
         public readonly TemplateManager templateManager;
+        private readonly QuestionManager questionManager;
 
         public TemplateController(TemplateManager _templateManager
+            , QuestionManager questionManager
             , IWebHostEnvironment _webHostEnvironment)
         {
             templateManager = _templateManager;
+            this.questionManager = questionManager;
             webHostEnvironment = _webHostEnvironment;
         }
         public IActionResult Index()
@@ -27,11 +29,14 @@ namespace ExamForms.Areas.Templates.Controllers
 
         public async Task<IActionResult> Create()
         {
+            TemplateViewModel template = new TemplateViewModel();
+
             var topics = await templateManager.GettAllTopic();
             ViewBag.Topics = new SelectList(topics, "TopicId", "TopicName");
-            var tags = await templateManager.GettAllTag();
-            ViewBag.Tags = tags;
-            return View();
+            ViewBag.Tags = await templateManager.GettAllTag();
+
+            template.Questions = await questionManager.GetAllQuestionsAsync();
+            return View(template);
         }
 
         [HttpPost]
