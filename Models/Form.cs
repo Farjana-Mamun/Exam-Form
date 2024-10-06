@@ -7,13 +7,13 @@ public partial class Form
 {
     public int FormId { get; set; }
 
-    public int TemplateId { get; set; }
+    public int? TemplateId { get; set; }
 
-    public int UserId { get; set; }
+    public int? UserId { get; set; }
 
-    public DateTime SubmittedAt { get; set; }
+    public DateTime? SubmittedAt { get; set; }
 
     public virtual ICollection<Answer> Answers { get; set; } = new List<Answer>();
 
-    public virtual Template Template { get; set; } = null!;
+    public virtual Template? Template { get; set; }
 }

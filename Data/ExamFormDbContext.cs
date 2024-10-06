@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExamForms.Data;
 
-public class ExamFormDbContext : DbContext
+public partial class ExamFormDbContext : DbContext
 {
     public ExamFormDbContext() { }
 
@@ -107,7 +107,9 @@ public class ExamFormDbContext : DbContext
             new Tag { TagId = 1, TagName = "chemistry" },
             new Tag { TagId = 2, TagName = "biology" },
             new Tag { TagId = 3, TagName = "physics" },
-            new Tag { TagId = 4, TagName = "quiz Test" }
+            new Tag { TagId = 4, TagName = "quiz_test" }
         );
+        OnModelCreatingPartial(modelBuilder);
     }
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

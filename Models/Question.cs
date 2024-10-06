@@ -7,19 +7,21 @@ public partial class Question
 {
     public int QuestionId { get; set; }
 
-    public int TemplateId { get; set; }
+    public int? TemplateId { get; set; }
 
-    public string QuestionType { get; set; } = null!;
-    public int SelectedOptionId { get; set; }
+    public string? QuestionType { get; set; }
 
-    public string QuestionTitle { get; set; } = null!;
+    public int? SelectedOptionId { get; set; }
 
-    public string Description { get; set; } = null!;
+    public string? QuestionTitle { get; set; }
 
-    public bool IsDisplayed { get; set; }
-    public int DisplayOrder { get; set; }
+    public string? Description { get; set; }
+
+    public bool? IsDisplayed { get; set; }
+
+    public int? DisplayOrder { get; set; }
 
     public virtual ICollection<QuestionOption> QuestionOptions { get; set; } = new List<QuestionOption>();
 
-    public virtual Template Template { get; set; } = null!;
+    public virtual Template? Template { get; set; }
 }

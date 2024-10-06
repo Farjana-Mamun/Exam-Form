@@ -7,21 +7,21 @@ public partial class Template
 {
     public int TemplateId { get; set; }
 
-    public string Title { get; set; } = null!;
+    public string? Title { get; set; }
 
-    public string Description { get; set; } = null!;
+    public string? Description { get; set; }
 
-    public int TopicId { get; set; }
+    public int? TopicId { get; set; }
 
-    public string Tags { get; set; } = null!;
+    public string? Tags { get; set; }
 
-    public string Image { get; set; } = null!;
+    public string? Image { get; set; }
 
-    public string AccessMode { get; set; } = null!;
+    public string? AccessMode { get; set; }
 
-    public string CreatedBy { get; set; } = null!;
+    public string? CreatedBy { get; set; }
 
-    public DateTime CreatedDate { get; set; }
+    public DateTime? CreatedDate { get; set; }
 
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
