@@ -1,5 +1,6 @@
 ﻿using ExamForms.Manager;
 using ExamForms.Models;
+using ExamForms.Models.Accounts;
 using ExamForms.ViewModel;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -13,13 +14,16 @@ namespace ExamForms.Areas.Templates.Controllers
     {
         private readonly IWebHostEnvironment webHostEnvironment;
         public readonly TemplateManager templateManager;
+        private readonly UserManager<ApplicationUser> userManager;
         private readonly QuestionManager questionManager;
 
         public TemplateController(TemplateManager _templateManager
+            , UserManager<ApplicationUser> userManager
             , QuestionManager questionManager
             , IWebHostEnvironment _webHostEnvironment)
         {
             templateManager = _templateManager;
+            this.userManager = userManager;
             this.questionManager = questionManager;
             webHostEnvironment = _webHostEnvironment;
         }
@@ -53,10 +57,11 @@ namespace ExamForms.Areas.Templates.Controllers
                 Image.CopyTo(new FileStream(serverFolder, FileMode.Create));
                 model.Image = "/" + folder;
             }
+            var userProfile = await userManager.FindByEmailAsync(User.Identity.Name);
             if (model.TemplateId == 0)
-                model.TemplateId = await templateManager.CreateTemplateAsync(model, User.Identity);
+                model.TemplateId = await templateManager.CreateTemplateAsync(model, userProfile);
             else
-                model.TemplateId = await templateManager.UpdateTemplateAsync(model, User.Identity);
+                model.TemplateId = await templateManager.UpdateTemplateAsync(model, userProfile);
             return Json(new { message = "Success", id = model.TemplateId });
         }
 

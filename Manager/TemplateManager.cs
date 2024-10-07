@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ExamForms.Models;
+using ExamForms.Models.Accounts;
 using ExamForms.Repository;
 using ExamForms.ViewModel;
 using Microsoft.CodeAnalysis.FlowAnalysis;
@@ -72,11 +73,11 @@ namespace ExamForms.Manager
             }
         }
 
-        public async Task<int> CreateTemplateAsync(TemplateViewModel model, IIdentity? User)
+        public async Task<int> CreateTemplateAsync(TemplateViewModel model, ApplicationUser User)
         {
             try
             {
-                model.CreatedBy = User.Name;
+                model.CreatedBy = User.FirstName + " " + User.LastName;
                 model.CreatedDate = DateTime.Now;
 
                 List<Tag> tags = new List<Tag>();
@@ -93,7 +94,7 @@ namespace ExamForms.Manager
             }
         }
 
-        public async Task<int> UpdateTemplateAsync(TemplateViewModel model, IIdentity? User)
+        public async Task<int> UpdateTemplateAsync(TemplateViewModel model, ApplicationUser User)
         {
             try
             {
