@@ -25,6 +25,18 @@ namespace ExamForms.Repository
             }
         }
 
+        public async Task<Template> GetTemplateById(int id)
+        {
+            try
+            {
+                return await context.Templates.Where(x => x.TemplateId == id).FirstOrDefaultAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<List<Topic>> GettAllTopic()
         {
             try
@@ -67,6 +79,48 @@ namespace ExamForms.Repository
                     await context.SaveChangesAsync();
                 }
                 return model.TemplateId;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<int> UpdateTemplate(Template model, List<Tag> tags)
+        {
+            try
+            {
+                 context.Templates.Update(model);
+                await context.SaveChangesAsync();
+
+                var unavailableTags = tags
+                    .Where(tag => !context.Tags.Select(t => t.TagName).ToList()
+                        .Contains(tag.TagName))
+                    .ToList();
+
+                if (unavailableTags.Any())
+                {
+                    await context.Tags.AddRangeAsync(unavailableTags);
+                    await context.SaveChangesAsync();
+                }
+                return model.TemplateId;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task DeleteTemplate(int id)
+        {
+            try
+            {
+                Template template = await context.Templates.FindAsync(id);
+                if (template != null)
+                {
+                    context.Templates.Remove(template);
+                    await context.SaveChangesAsync();
+                }
             }
             catch (Exception)
             {

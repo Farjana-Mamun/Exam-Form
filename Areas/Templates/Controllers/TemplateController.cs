@@ -23,15 +23,16 @@ namespace ExamForms.Areas.Templates.Controllers
             this.questionManager = questionManager;
             webHostEnvironment = _webHostEnvironment;
         }
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index()
         {
             var templates = await templateManager.GettAllTemplateAsync();
             return View(templates);
         }
 
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> SaveTemplate(int id)
         {
             TemplateViewModel template = new TemplateViewModel();
+            template = await templateManager.GetTemplateByIdAsync(id) ?? new TemplateViewModel();
 
             var topics = await templateManager.GettAllTopic();
             ViewBag.Topics = new SelectList(topics, "TopicId", "TopicName");
@@ -52,8 +53,18 @@ namespace ExamForms.Areas.Templates.Controllers
                 Image.CopyTo(new FileStream(serverFolder, FileMode.Create));
                 model.Image = "/" + folder;
             }
-            model.TemplateId = await templateManager.CreateTemplateAsync(model, User.Identity);
+            if (model.TemplateId == 0)
+                model.TemplateId = await templateManager.CreateTemplateAsync(model, User.Identity);
+            else
+                model.TemplateId = await templateManager.UpdateTemplateAsync(model, User.Identity);
             return Json(new { message = "Success", id = model.TemplateId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteTemplate(int id)
+        {
+            await templateManager.DeleteTemplateAsync(id);
+            return RedirectToAction(nameof(Index));
         }
         
     }

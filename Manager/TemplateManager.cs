@@ -33,6 +33,19 @@ namespace ExamForms.Manager
             }
         }
 
+        public async Task<TemplateViewModel> GetTemplateByIdAsync(int id)
+        {
+            try
+            {
+                var templates = await templateRepository.GetTemplateById(id);
+                return mapper.Map<TemplateViewModel>(templates);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<List<TopicViewModel>> GettAllTopic()
         {
             try
@@ -73,6 +86,38 @@ namespace ExamForms.Manager
                 Template template = new Template();
                 template = mapper.Map<Template>(model);
                 return await templateRepository.CreateTemplate(template, tags);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<int> UpdateTemplateAsync(TemplateViewModel model, IIdentity? User)
+        {
+            try
+            {
+                model.CreatedBy = User.Name;
+                model.CreatedDate = DateTime.Now;
+
+                List<Tag> tags = new List<Tag>();
+                if (model.Tags != null)
+                    tags = model.Tags.Split(',').Select(tag => new Tag { TagName = tag.Trim().ToLower() }).ToList();
+
+                Template template = new Template();
+                template = mapper.Map<Template>(model);
+                return await templateRepository.UpdateTemplate(template, tags);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task DeleteTemplateAsync(int id)
+        {
+            try
+            {
+                await templateRepository.DeleteTemplate(id);
             }
             catch (Exception)
             {

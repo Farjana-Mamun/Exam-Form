@@ -31,8 +31,8 @@ public partial class ExamFormDbContext : DbContext
     public virtual DbSet<Topic> Topics { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       // => optionsBuilder.UseSqlServer("Data Source=RASEL-PLACOVU\\SQLEXPRESS;Initial Catalog=ExamFormDB;User Id=sa;Password=12345;TrustServerCertificate=True;");
-        => optionsBuilder.UseSqlServer("Server=Farjana;Database=ExamFormDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
+       => optionsBuilder.UseSqlServer("Data Source=RASEL-PLACOVU\\SQLEXPRESS;Initial Catalog=ExamFormDB;User Id=sa;Password=12345;TrustServerCertificate=True;");
+       //=> optionsBuilder.UseSqlServer("Server=Farjana;Database=ExamFormDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -72,13 +72,6 @@ public partial class ExamFormDbContext : DbContext
             entity.Property(e => e.QuestionType).HasMaxLength(50);
 
             entity.HasOne(d => d.Template).WithMany(p => p.Questions).HasForeignKey(d => d.TemplateId);
-        });
-
-        modelBuilder.Entity<QuestionOption>(entity =>
-        {
-            entity.HasIndex(e => e.QuestionId, "IX_QuestionOptions_QuestionId");
-
-            entity.HasOne(d => d.Question).WithMany(p => p.QuestionOptions).HasForeignKey(d => d.QuestionId);
         });
 
         modelBuilder.Entity<Template>(entity =>

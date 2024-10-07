@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ExamForms.Constants;
 
-public class Enums
+public static class Enums
 {
     public enum AppRoleEnums
     {

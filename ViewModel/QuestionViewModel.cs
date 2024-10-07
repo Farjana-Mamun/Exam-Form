@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using static ExamForms.Constants.Enums;
@@ -10,6 +11,21 @@ public partial class QuestionViewModel
     public QuestionViewModel()
     {
         Template = new TemplateViewModel();
+        QuestionOptions = new List<QuestionOptionViewModel>
+        {
+            new QuestionOptionViewModel
+            {
+                QuestionOptionId = 1,
+                OptionName = "Yes",
+                IsCorrectAnswer = true
+            },
+            new QuestionOptionViewModel
+            {
+                QuestionOptionId = 2,
+                OptionName = "No",
+                IsCorrectAnswer = false
+            }
+        };
     }
 
     public int QuestionId { get; set; }
@@ -30,7 +46,7 @@ public partial class QuestionViewModel
     public int DisplayOrder { get; set; }
 
     public TemplateQuestionTypeEnum QuestionTypeEnum { get; set; }
-    public virtual ICollection<QuestionOptionViewModel> QuestionOptions { get; set; } = new List<QuestionOptionViewModel>();
+    public virtual IEnumerable<QuestionOptionViewModel> QuestionOptions { get; set; } = new List<QuestionOptionViewModel>();
 
     public virtual TemplateViewModel? Template { get; set; } = null!;
 }

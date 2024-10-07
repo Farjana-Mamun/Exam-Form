@@ -21,7 +21,5 @@ public partial class Question
 
     public int? DisplayOrder { get; set; }
 
-    public virtual ICollection<QuestionOption> QuestionOptions { get; set; } = new List<QuestionOption>();
-
     public virtual Template? Template { get; set; }
 }

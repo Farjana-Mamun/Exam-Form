@@ -58,8 +58,7 @@ $(function () {
 $('#templateQuestionForm').on('submit', function (e) {
     e.preventDefault();
     var formData = new FormData($(this)[0]);
-    console.log(formData);
-   
+
     $.ajax({
         url: '/Templates/Question/AddTemplateQuestion',
         type: 'POST',
@@ -123,21 +122,6 @@ function questionTypeEvent(element) {
         $("#add_question_checkbox_modal_placeholder").html("");
     }
 }
-
-$('#addQuestionBtn').on('click', function () {
-    $.ajax({
-        url: '/Templates/Question/AddQuestionModal',
-        type: 'GET',
-        success: function (data) {
-            $("#addQuestion_modal_placeholder").html(data);
-            $('#questionTemplateId').val(templateId);
-            $("#questionModal").modal('show');
-        },
-        error: function (e) {
-            alert("An error occurred while loading the modal." + e);
-        }
-    });
-})
 
 $('#headerCheckBox').on('change', function () {
     $('.bodyCheckBox').prop('checked', this.checked);

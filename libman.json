@@ -90,6 +90,10 @@
         "jquery-ui.min.js",
         "jquery-ui.js"
       ]
+    },
+    {
+      "library": "jquery.blockUI@2.70",
+      "destination": "wwwroot/lib/jquery.blockUI/"
     }
   ]
 }

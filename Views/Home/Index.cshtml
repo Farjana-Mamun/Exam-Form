@@ -17,7 +17,7 @@
                         <img src="@template.Image" class="card-img-top template-img" alt="Template Image">
                         <div class="card-body">
                             <h5 class="card-title">@template.Title</h5>
-                            <p class="card-text">@template.Description</p>
+                            @Html.Raw(@template.Description)
                             <p class="card-text"><small class="text-muted">Author: @template.CreatedBy</small></p>
                         </div>
                     </div>

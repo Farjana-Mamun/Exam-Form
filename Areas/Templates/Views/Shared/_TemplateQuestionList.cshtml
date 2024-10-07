@@ -2,6 +2,16 @@
 @using static ExamForms.Constants.Enums
 @model IEnumerable<ExamForms.ViewModel.QuestionViewModel>
 
+@{
+    var questionTypes = new Dictionary<int, string>
+    {
+        { 1, "Single Line" },
+        { 2, "Multiple Line" },
+        { 3, "Positive Integer" },
+        { 4, "Checkbox" }
+    };
+}
+
 <style>
     #questionListSortable {
         list-style-type: none;
@@ -29,16 +39,18 @@
         @foreach (var data in Model)
         {
             var checkbox = data.IsDisplayed ? "checked" : "";
-            <li class="ui-state-default ui-sortable-handle d-flex" data-question-id="@data.QuestionId" data-template-id="@data.TemplateId">
+            var questionType = questionTypes[int.Parse(data.QuestionType)];
+
+            <li class="ui-state-default ui-sortable-handle d-flex">
                 <p style="width: 65%; margin: 0;"><i class='bx bx-menu me-2'></i>@data.QuestionTitle</p>
-                <p style="width: 15%; margin: 0;">@data.QuestionType</p>
+                <p style="width: 15%; margin: 0;">@questionType</p>
                 <div style="width: 10%; text-align: center;">
                     <input type="checkbox" @checkbox class="form-check-input" />
                 </div>
                 <div style="width: 10%">
                     <div class="float-end">
-                        <button class="btn btn-sm btn-secondary" id="editTemplateQuestionBtn"><i class='bx bx-edit'></i></button>
-                        <button class="btn btn-sm btn-danger" id="deleteTemplateQuestionBtn"><i class='bx bx-trash'></i></button>
+                        <button class="btn btn-sm btn-secondary" onclick="editTemplateQuestion(@data.QuestionId, @data.TemplateId)"><i class='bx bx-edit'></i></button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteTemplateQuestion(@data.QuestionId, @data.TemplateId)"><i class='bx bx-trash'></i></button>
                     </div>
                 </div>
             </li>

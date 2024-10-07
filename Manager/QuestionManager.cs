@@ -44,5 +44,48 @@ namespace ExamForms.Manager
                 throw;
             }
         }
+
+        public async Task<int> UpdateTemplateQuestionAsync(QuestionViewModel model, IIdentity? User)
+        {
+            try
+            {
+                Question question = mapper.Map<Question>(model);
+                return await questionRepository.UpdateTemplateQuestion(question);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task DeleteTemplateQuestionAsync(int id)
+        {
+            try
+            {
+                await questionRepository.DeleteTemplateQuestion(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<QuestionViewModel> GetQuestionByIdAsync(int id)
+        {
+            try
+            {
+                QuestionViewModel questionViewModel = new QuestionViewModel();
+                var questionOptions = questionViewModel.QuestionOptions;
+                Question question = await questionRepository.GetQuestionById(id);
+                if (question != null)
+                    questionViewModel = mapper.Map<QuestionViewModel>(question);
+                questionViewModel.QuestionOptions = questionOptions;
+                return questionViewModel;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

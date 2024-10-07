@@ -26,6 +26,7 @@
             @using (Html.BeginForm("SaveTemplateSetup", "Template", FormMethod.Post, new { area = "Templates", id = "templateSetupForm", enctype = "multipart/form-data", @class = "" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <input type="hidden" asp-for="TemplateId" />
                 <div class="mb-3">
                     <label class="form-label" for="templateTitle">@Html.DisplayNameFor(x => x.Title)</label>
                     @Html.EditorFor(x => x.Title, new { htmlAttributes = new { placeholder = "Template title", id = "templateTitle", @class = "form-control", required = "required" } })
@@ -33,7 +34,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="templateDescription">@Html.DisplayNameFor(x => x.Description)</label>
-                    <div class="descriptionEditor"></div>
+                    <div class="descriptionEditor" id="editTemplateDescription"></div>
                     <input asp-for="Description" type="hidden" id="templateDescription" />
                     @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
                 </div>
@@ -61,11 +62,8 @@
         <div class="pt-3 pb-3">
             <button id="addQuestionBtn" class="btn btn-outline-success">Add New Question</button>
         </div>
-@* 
         <div id="question_list_sortable_placeholder">
-            @Html.Partial("~/Areas/Templates/Views/Shared/_TemplateQuestionList.cshtml", Model?.Questions)
-        </div> *@
-        <div id="question_list_sortable_placeholder">
+            <input type="hidden" asp-for="TemplateId" class="templateId" />            
             <partial name="~/Areas/Templates/Views/Shared/_TemplateQuestionList.cshtml" model="@Model?.Questions" />
         </div>
     </div>
@@ -75,9 +73,69 @@
 
 @section Scripts {
     <script>
+        $('#addQuestionBtn').on('click', function () {
+            $.ajax({
+                url: '/Templates/Question/SaveQuestionModal',
+                type: 'GET',
+                success: function (data) {
+                    console.log(data);
+                    $("#addQuestion_modal_placeholder").empty();
+                    $("#addQuestion_modal_placeholder").html(data);
+                    $('#questionTemplateId').val($('.templateId').val());
+                    $("#questionModal").modal('show');
+                },
+                error: function (e) {
+                    alert("An error occurred while loading the modal." + e);
+                }
+            });
+        })
+
+        function editTemplateQuestion(questionId, templateId) {
+            $.ajax({
+                url: '/Templates/Question/SaveQuestionModal?questionId=' + questionId,
+                type: 'GET',
+                success: function (data) {
+                    $("#addQuestion_modal_placeholder").empty();
+                    $("#addQuestion_modal_placeholder").html(data);
+                    $('#questionTemplateId').val($('.templateId').val());
+                    $("#questionModal").modal('show');
+                },
+                error: function (e) {
+                    alert("An error occurred while loading the modal." + e);
+                }
+            });
+        };
+
+        function deleteTemplateQuestion(questionId, templateId) {
+            if (confirm('Are you sure you want to delete this question?')) {
+                $.ajax({
+                    url: '/Templates/Question/DeleteTemplateQuestion?questionId=' + questionId,
+                    type: 'POST',
+                    success: function (data) {
+                        $('#question_list_sortable_placeholder').html(data);
+                    },
+                    error: function (e) {
+                        alert("An error occurred while loading the modal." + e);
+                    }
+                });
+            }            
+        };
+
+        // --------------------------- View Content ----------------------------
+        var content = @Html.Raw(JsonConvert.SerializeObject(Model.Description));
+
+        var templateSpecificTags = @Html.Raw(JsonConvert.SerializeObject(Model.Tags));
+        if (templateSpecificTags != null) {
+            var subjectsArray = templateSpecificTags.split(',');
+            var formattedValues = subjectsArray.map(function (subject) {
+                return { value: subject.trim() };
+            });
+            document.querySelector('.advance-options').value = JSON.stringify(formattedValues);
+        }
+
+        // --------------------------------- Tagify ----------------------------
         var tagsFromServer = @Html.Raw(JsonConvert.SerializeObject(ViewBag.Tags));
         var hiddenInput = document.getElementById('hiddenTags');
-
         var input = document.querySelector('input.advance-options'),
             tagify = new Tagify(input, {
                 pattern: /^.{0,20}$/,
@@ -92,12 +150,10 @@
                     caseSensitive: false,
                 }
             });
-
         tagify.on('change', function () {
             hiddenInput.value = tagify.value.map(tag => tag.value).join(',');
             updatePlaceholderByTagsCount();
         });
-
         function updatePlaceholderByTagsCount() {
             if (tagify.value.length == 0) {
                 tagify.setPlaceholder(`Maximum 6 tags can be added`);
@@ -105,20 +161,16 @@
                 tagify.setPlaceholder(`${6 - tagify.value.length} are left`);
             }
         }
-
         updatePlaceholderByTagsCount()
 
         // ---------------- EDITOR -----------------------
         const quill = new Quill('.descriptionEditor', {
             theme: 'snow'
         });
-
         quill.on('text-change', function (delta, oldDelta, source) {
             var editorContent = quill.root.innerHTML;
             $('#templateDescription').val(editorContent);
         });
-
-        // -------------- TABLE DRAGGER ------------------
-        
+        quill.root.innerHTML = content;
     </script>
 }
