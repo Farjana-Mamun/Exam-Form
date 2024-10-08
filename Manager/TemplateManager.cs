@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using ExamForms.Data;
 using ExamForms.Models;
-using ExamForms.Models.Accounts;
 using ExamForms.Repository;
 using ExamForms.ViewModel;
 using Microsoft.CodeAnalysis.FlowAnalysis;
@@ -73,11 +73,11 @@ namespace ExamForms.Manager
             }
         }
 
-        public async Task<int> CreateTemplateAsync(TemplateViewModel model, ApplicationUser User)
+        public async Task<int> CreateTemplateAsync(TemplateViewModel model, IIdentity? User)
         {
             try
             {
-                model.CreatedBy = User.FirstName + " " + User.LastName;
+                model.CreatedBy = User.Name;
                 model.CreatedDate = DateTime.Now;
 
                 List<Tag> tags = new List<Tag>();
@@ -94,7 +94,7 @@ namespace ExamForms.Manager
             }
         }
 
-        public async Task<int> UpdateTemplateAsync(TemplateViewModel model, ApplicationUser User)
+        public async Task<int> UpdateTemplateAsync(TemplateViewModel model, IIdentity? User)
         {
             try
             {
@@ -119,6 +119,56 @@ namespace ExamForms.Manager
             try
             {
                 await templateRepository.DeleteTemplate(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<List<CommentViewModel>> GetCommentsByTemplateIdAsync(int templateId)
+        {
+            try
+            {
+                var comments = await templateRepository.GetCommentsByTemplateId(templateId);
+                return mapper.Map<List<CommentViewModel>>(comments);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<bool> AddCommentAsync(CommentViewModel comment)
+        {
+            try
+            {
+                var commentEntity = mapper.Map<Comment>(comment);
+                return await templateRepository.AddComment(commentEntity);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<List<LikeViewModel>> GetLikesByTemplateIdAsync(int templateId)
+        {
+            try
+            {
+                var likes = await templateRepository.GetLikesByTemplateId(templateId);
+                return mapper.Map<List<LikeViewModel>>(likes);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<bool> AddLikeAsync(LikeViewModel like)
+        {
+            try
+            {
+                var likeEntity = mapper.Map<Like>(like);
+                return await templateRepository.AddLike(likeEntity);
             }
             catch (Exception)
             {

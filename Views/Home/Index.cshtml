@@ -8,7 +8,7 @@
     <h2 class="mb-4 text-center">Latest Templates</h2>
     <div class="row">
         <!-- Template Card -->
-        @foreach (var template in Model.Take(4))
+        @foreach (var template in Model)
         {
             if (template != null && !string.IsNullOrEmpty(template.Title) && !string.IsNullOrEmpty(template.Image))
             {
@@ -39,16 +39,20 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var templates in Model)
-                {
-                    if (templates != null && !string.IsNullOrEmpty(templates.Title))
+                @{
+                    var i = 1;
+                    foreach (var templates in Model)
                     {
-                        <tr>
-                            <th scope="row">@templates.TemplateId</th>
-                            <td>@templates.Title</td>
-                            <td>@templates.CreatedBy</td>
-                            <td>100</td>
-                        </tr>
+                        if (templates != null && !string.IsNullOrEmpty(templates.Title))
+                        {
+                            <tr>
+                                <th scope="row">@i</th>
+                                <td>@templates.Title</td>
+                                <td>@templates.CreatedBy</td>
+                                <td>100</td>
+                            </tr>
+                            i++;
+                        }
                     }
                 }
             </tbody>

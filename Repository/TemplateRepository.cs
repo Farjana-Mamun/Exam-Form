@@ -127,5 +127,41 @@ namespace ExamForms.Repository
                 throw;
             }
         }
+        public async Task<List<Comment>> GetCommentsByTemplateId(int templateId)
+        {
+            return await context.Comments
+                .Where(c => c.TemplateId == templateId)
+                .ToListAsync();
+        }
+
+        public async Task<bool> AddComment(Comment comment)
+        {
+            context.Comments.Add(comment);
+            var result = await context.SaveChangesAsync();
+            return result > 0;
+        }
+        public async Task<List<Like>> GetLikesByTemplateId(int templateId)
+        {
+            return await context.Likes
+                .Where(l => l.TemplateId == templateId)
+                .ToListAsync();
+        }
+
+        public async Task<bool> AddLike(Like like)
+        {
+            // Check if the user already liked this template to avoid duplicate likes
+            var existingLike = await context.Likes
+                .FirstOrDefaultAsync(l => l.TemplateId == like.TemplateId && l.UserId == like.UserId);
+
+            if (existingLike != null)
+            {
+                return false; // User has already liked this template
+            }
+
+            context.Likes.Add(like);
+            var result = await context.SaveChangesAsync();
+            return result > 0;
+        }
+
     }
 }

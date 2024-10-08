@@ -17,123 +17,127 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ExamForms
 build_property.RootNamespace = ExamForms
-build_property.ProjectDir = D:\Reyas Project\NEW\
+build_property.ProjectDir = F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\Reyas Project\NEW
+build_property.MSBuildProjectDirectory = F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Account/AccessDenied.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Account/SignIn.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Account/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWNjb3VudFxTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Account/SignInSignUp.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Account/SignInSignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWNjb3VudFxTaWduSW5TaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Account/SignUp.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Account/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Administration/AssignRolesToUser.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Administration/AssignRolesToUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWRtaW5pc3RyYXRpb25cQXNzaWduUm9sZXNUb1VzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Administration/EditUser.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Administration/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWRtaW5pc3RyYXRpb25cRWRpdFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Administration/EditUserRoleByAdmin.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Administration/EditUserRoleByAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWRtaW5pc3RyYXRpb25cRWRpdFVzZXJSb2xlQnlBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Administration/ListOfAllRoles.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Administration/ListOfAllRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWRtaW5pc3RyYXRpb25cTGlzdE9mQWxsUm9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Administration/ListOfAllUsers.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Administration/ListOfAllUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWRtaW5pc3RyYXRpb25cTGlzdE9mQWxsVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Administration/ManageUserClaims.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Administration/ManageUserClaims.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWRtaW5pc3RyYXRpb25cTWFuYWdlVXNlckNsYWltcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/Administration/_UserTable.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/Administration/_UserTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcQWRtaW5pc3RyYXRpb25cX1VzZXJUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/_ViewImports.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Accounts/Views/_ViewStart.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Accounts/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Templates/Views/Shared/_AddQuestionCheckboxModal.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Shared/_AddQuestionCheckboxModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFNoYXJlZFxfQWRkUXVlc3Rpb25DaGVja2JveE1vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Templates/Views/Shared/_TemplateQuestionAddModal.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Shared/_TemplateQuestionAddModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFNoYXJlZFxfVGVtcGxhdGVRdWVzdGlvbkFkZE1vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Templates/Views/Shared/_TemplateQuestionList.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Shared/_TemplateQuestionList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFNoYXJlZFxfVGVtcGxhdGVRdWVzdGlvbkxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Templates/Views/Template/Index.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Template/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFRlbXBsYXRlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Template/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFRlbXBsYXRlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Templates/Views/Template/SaveTemplate.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/Template/SaveTemplate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXFRlbXBsYXRlXFNhdmVUZW1wbGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Templates/Views/_ViewImports.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Areas/Templates/Views/_ViewStart.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Areas/Templates/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVtcGxhdGVzXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Views/Home/Index.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Views/Home/Privacy.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Views/Shared/Error.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Views/Shared/_LoginPartial.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Views/_ViewImports.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Views/_ViewStart.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Reyas Project/NEW/Views/Shared/_Layout.cshtml]
+[F:/Intern Developer .Net/ASP .Net Core with C\#/Main Project/ExamForms/ExamForms/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4isge1pasj

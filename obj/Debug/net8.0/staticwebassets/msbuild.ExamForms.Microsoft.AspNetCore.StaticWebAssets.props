@@ -560,6 +560,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\templateImages\fb7482c3-d540-4cc7-bead-3970ac1e60f8kimberly-farmer-lUaaKCUANVI-unsplash.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\templateImages\fce76b69-290f-48cc-a192-1c5fe9d086e00405_638012718654874502.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ExamForms</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ExamForms</BasePath>
+      <RelativePath>images/templateImages/fce76b69-290f-48cc-a192-1c5fe9d086e00405_638012718654874502.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\templateImages\fce76b69-290f-48cc-a192-1c5fe9d086e00405_638012718654874502.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\templateImages\fcf5d46f-b81b-4f43-963f-45a0ce86fbbf399810702_3626021167719263_3508352411570846729_n2.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ExamForms</SourceId>

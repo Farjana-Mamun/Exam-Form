@@ -1,6 +1,5 @@
 ﻿using ExamForms.Manager;
 using ExamForms.Models;
-using ExamForms.Models.Accounts;
 using ExamForms.ViewModel;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -14,16 +13,13 @@ namespace ExamForms.Areas.Templates.Controllers
     {
         private readonly IWebHostEnvironment webHostEnvironment;
         public readonly TemplateManager templateManager;
-        private readonly UserManager<ApplicationUser> userManager;
         private readonly QuestionManager questionManager;
 
         public TemplateController(TemplateManager _templateManager
-            , UserManager<ApplicationUser> userManager
             , QuestionManager questionManager
             , IWebHostEnvironment _webHostEnvironment)
         {
             templateManager = _templateManager;
-            this.userManager = userManager;
             this.questionManager = questionManager;
             webHostEnvironment = _webHostEnvironment;
         }
@@ -57,11 +53,11 @@ namespace ExamForms.Areas.Templates.Controllers
                 Image.CopyTo(new FileStream(serverFolder, FileMode.Create));
                 model.Image = "/" + folder;
             }
-            var userProfile = await userManager.FindByEmailAsync(User.Identity.Name);
+
             if (model.TemplateId == 0)
-                model.TemplateId = await templateManager.CreateTemplateAsync(model, userProfile);
+                model.TemplateId = await templateManager.CreateTemplateAsync(model, User.Identity);
             else
-                model.TemplateId = await templateManager.UpdateTemplateAsync(model, userProfile);
+                model.TemplateId = await templateManager.UpdateTemplateAsync(model, User.Identity);
             return Json(new { message = "Success", id = model.TemplateId });
         }
 
@@ -71,6 +67,35 @@ namespace ExamForms.Areas.Templates.Controllers
             await templateManager.DeleteTemplateAsync(id);
             return RedirectToAction(nameof(Index));
         }
-        
+        public async Task<IActionResult> Details(int id)
+        {
+            var template = await templateManager.GetTemplateByIdAsync(id);
+            var comments = await templateManager.GetCommentsByTemplateIdAsync(id);
+            var likes = await templateManager.GetLikesByTemplateIdAsync(id);
+
+            var templateDetailsViewModel = new TemplateDetailsViewModel
+            {
+                Template = template,
+                Comments = comments,
+                LikesCount = likes.Count
+            };
+
+            return View(templateDetailsViewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddComment(CommentViewModel comment)
+        {
+            var result = await templateManager.AddCommentAsync(comment);
+            return RedirectToAction("Details", new { id = comment.TemplateId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddLike(LikeViewModel like)
+        {
+            var result = await templateManager.AddLikeAsync(like);
+            return RedirectToAction("Details", new { id = like.TemplateId });
+        }
+
     }
 }

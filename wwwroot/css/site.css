@@ -88,6 +88,15 @@ body {
     background-color: #f1f1f1;
 }
 
+.like-icon {
+    color: #007bff; /* Blue color for the like icon */
+    transition: color 0.3s ease;
+}
+
+    .like-icon:hover {
+        color: #0056b3; /* Darker blue on hover */
+    }
+
 
 
 

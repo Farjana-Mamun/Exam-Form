@@ -16,14 +16,10 @@ F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Authentication.Core.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Authentication.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Authorization.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Authorization.Policy.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.Authorization.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.Endpoints.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.Forms.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.Server.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.Web.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Cors.dll
@@ -52,7 +48,6 @@ F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Identity.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Localization.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Localization.Routing.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Metadata.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Mvc.Core.dll
@@ -107,7 +102,6 @@ F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.DependencyInjection.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.Abstractions.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.dll
@@ -124,7 +118,6 @@ F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Http.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Localization.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Configuration.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Console.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Debug.dll
@@ -137,7 +130,6 @@ F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.Primitives.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Extensions.WebEncoders.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.JSInterop.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.Net.Http.Headers.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.VisualBasic.Core.dll
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\refs\Microsoft.VisualBasic.dll
@@ -1143,3 +1135,14 @@ D:\Reyas Project\NEW\obj\Debug\net8.0\refint\ExamForms.dll
 D:\Reyas Project\NEW\obj\Debug\net8.0\ExamForms.pdb
 D:\Reyas Project\NEW\obj\Debug\net8.0\ExamForms.genruntimeconfig.cache
 D:\Reyas Project\NEW\obj\Debug\net8.0\ref\ExamForms.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.JSInterop.dll
