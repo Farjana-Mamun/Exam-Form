@@ -5,6 +5,12 @@ namespace ExamForms.ViewModel;
 
 public partial class FormViewModel
 {
+    public FormViewModel()
+    {
+        Questions = new List<QuestionViewModel>();
+        Answers = new List<AnswerViewModel>();
+    }
+
     public int FormId { get; set; }
 
     public int TemplateId { get; set; }
@@ -13,7 +19,8 @@ public partial class FormViewModel
 
     public DateTime SubmittedAt { get; set; }
 
-    public virtual ICollection<AnswerViewModel> Answers { get; set; } = new List<AnswerViewModel>();
+    public virtual IEnumerable<QuestionViewModel> Questions { get; set; } = new List<QuestionViewModel>();
+    public virtual IEnumerable<AnswerViewModel> Answers { get; set; } = new List<AnswerViewModel>();
 
     public virtual TemplateViewModel Template { get; set; } = null!;
 }
