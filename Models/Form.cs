@@ -10,9 +10,9 @@ public partial class Form
 
     public int? TemplateId { get; set; }
 
-    public int? UserId { get; set; }
+    public string? SubmittedBy { get; set; }
 
-    public DateTime? SubmittedAt { get; set; }
+    public DateTime? SubmittedDate { get; set; }
 
     public virtual ICollection<Answer> Answers { get; set; } = new List<Answer>();
 

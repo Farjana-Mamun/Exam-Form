@@ -29,7 +29,7 @@ namespace ExamForms.Areas.Templates.Controllers
             return View(templates);
         }
 
-        public async Task<IActionResult> SaveTemplate(int id)
+        public async Task<IActionResult> SaveTemplate(int id, string tab = "Setup")
         {
             TemplateViewModel template = new TemplateViewModel();
             template = await templateManager.GetTemplateByIdAsync(id) ?? new TemplateViewModel();
@@ -37,8 +37,9 @@ namespace ExamForms.Areas.Templates.Controllers
             var topics = await templateManager.GettAllTopic();
             ViewBag.Topics = new SelectList(topics, "TopicId", "TopicName");
             ViewBag.Tags = await templateManager.GettAllTag();
+            ViewBag.ActiveTab = tab;
 
-            template.Questions = await questionManager.GetAllQuestionsAsync();
+            template.Questions = await questionManager.GetQuestionsByTemplateIdAsync(id);
             return View(template);
         }
 
@@ -58,7 +59,9 @@ namespace ExamForms.Areas.Templates.Controllers
                 model.TemplateId = await templateManager.CreateTemplateAsync(model, User.Identity);
             else
                 model.TemplateId = await templateManager.UpdateTemplateAsync(model, User.Identity);
-            return Json(new { message = "Success", id = model.TemplateId });
+            
+            return RedirectToAction("SaveTemplate", new { id = model.TemplateId, tab = "Questions" });
+            //return Json(new { message = "Success", id = model.TemplateId });
         }
 
         [HttpPost]

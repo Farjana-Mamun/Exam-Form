@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExamForms.Migrations.ExamFormDb
 {
     [DbContext(typeof(ExamFormDbContext))]
-    [Migration("20241006105629_Initial2")]
+    [Migration("20241010070408_Initial2")]
     partial class Initial2
     {
         /// <inheritdoc />
@@ -184,7 +184,7 @@ namespace ExamForms.Migrations.ExamFormDb
 
                     b.HasKey("QuestionOptionId");
 
-                    b.HasIndex(new[] { "QuestionId" }, "IX_QuestionOptions_QuestionId");
+                    b.HasIndex("QuestionId");
 
                     b.ToTable("QuestionOptions");
                 });
@@ -362,17 +362,15 @@ namespace ExamForms.Migrations.ExamFormDb
 
             modelBuilder.Entity("ExamForms.Models.Question", b =>
                 {
-                    b.HasOne("ExamForms.Models.Template", "Template")
+                    b.HasOne("ExamForms.Models.Template", null)
                         .WithMany("Questions")
                         .HasForeignKey("TemplateId");
-
-                    b.Navigation("Template");
                 });
 
             modelBuilder.Entity("ExamForms.Models.QuestionOption", b =>
                 {
                     b.HasOne("ExamForms.Models.Question", "Question")
-                        .WithMany("QuestionOptions")
+                        .WithMany()
                         .HasForeignKey("QuestionId");
 
                     b.Navigation("Question");
@@ -390,11 +388,6 @@ namespace ExamForms.Migrations.ExamFormDb
             modelBuilder.Entity("ExamForms.Models.Form", b =>
                 {
                     b.Navigation("Answers");
-                });
-
-            modelBuilder.Entity("ExamForms.Models.Question", b =>
-                {
-                    b.Navigation("QuestionOptions");
                 });
 
             modelBuilder.Entity("ExamForms.Models.Template", b =>

@@ -17,6 +17,7 @@
             <p><strong>Author:</strong> @Model.Template.CreatedBy</p>
             <p><strong>Created At:</strong> @Model.Template.CreatedDate.ToShortDateString()</p>
             <p><strong>Likes:</strong> @Model.LikesCount</p>
+            <a class="btn btn-sm btn-success" href="@Url.Action("Index", "Forms", new { area = "Templates", id = Model.Template.TemplateId })">Start Test <i class='bx bx-right-arrow-alt'></i></a>
 
             <!-- Like Icon (no button box) -->
             <form asp-action="AddLike" method="post" class="mt-3" style="display: inline;">
@@ -30,24 +31,6 @@
     </div>
 
     <hr />
-
-    <!-- Questions Section -->
-    <h3 class="mt-4">Template Questions</h3>
-    @if (Model.Template.Questions != null && Model.Template.Questions.Any())
-    {
-        <ul class="list-group mb-4">
-            @foreach (var question in Model.Template.Questions)
-            {
-                <li class="list-group-item">
-                    <strong>@question.QuestionTitle</strong>
-                </li>
-            }
-        </ul>
-    }
-    else
-    {
-        <p>No questions available for this template.</p>
-    }
 
     <!-- Comment Section -->
     <h3>Comments</h3>

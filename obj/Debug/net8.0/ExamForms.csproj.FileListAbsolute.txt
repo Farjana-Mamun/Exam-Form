@@ -560,6 +560,17 @@ F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\obj\Debug\net8.0\ExamForms.pdb
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\obj\Debug\net8.0\ExamForms.genruntimeconfig.cache
 F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\obj\Debug\net8.0\ref\ExamForms.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.JSInterop.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\appsettings.Development.json
 D:\Reyas Project\NEW\bin\Debug\net8.0\appsettings.json
 D:\Reyas Project\NEW\bin\Debug\net8.0\libman.json
@@ -882,9 +893,17 @@ D:\Reyas Project\NEW\bin\Debug\net8.0\System.Web.Helpers.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\System.Web.WebPages.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -909,9 +928,11 @@ D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
@@ -921,6 +942,7 @@ D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.JSInterop.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\Reyas Project\NEW\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
@@ -1135,14 +1157,3 @@ D:\Reyas Project\NEW\obj\Debug\net8.0\refint\ExamForms.dll
 D:\Reyas Project\NEW\obj\Debug\net8.0\ExamForms.pdb
 D:\Reyas Project\NEW\obj\Debug\net8.0\ExamForms.genruntimeconfig.cache
 D:\Reyas Project\NEW\obj\Debug\net8.0\ref\ExamForms.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-F:\Intern Developer .Net\ASP .Net Core with C#\Main Project\ExamForms\ExamForms\bin\Debug\net8.0\Microsoft.JSInterop.dll

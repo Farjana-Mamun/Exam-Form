@@ -11,17 +11,17 @@
     }
 </style>
 
-<ul class="nav nav-tabs nav-fill" id="templateTabList" role="tablist">
+<ul class="nav nav-tabs" id="templateTab" role="tablist">
     <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="template-setup-tab" data-bs-toggle="tab" href="#template-setup" role="tab" aria-controls="template-setup" aria-selected="true">Template Setup</a>
+        <a class="nav-link @((ViewBag.ActiveTab == "Setup") ? "active" : "")" id="template-setup-tab" data-bs-toggle="tab" href="#template-setup" role="tab" aria-controls="template-setup" aria-selected="true">Setup</a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" id="template-question-tab" data-bs-toggle="tab" href="#template-question" role="tab" aria-controls="template-question" aria-selected="false">Template Question</a>
+        <a class="nav-link @((ViewBag.ActiveTab == "Questions") ? "active" : "")" id="template-question-tab" data-bs-toggle="tab" href="#template-question" role="tab" aria-controls="template-question" aria-selected="false">Questions</a>
     </li>
 </ul>
 
 <div class="tab-content" id="templateTabBody">
-    <div class="tab-pane fade show active" id="template-setup" role="tabpanel" aria-labelledby="template-setup-tab">
+    <div class="tab-pane fade @((ViewBag.ActiveTab == "Setup") ? "show active" : "")" id="template-setup" role="tabpanel" aria-labelledby="template-setup-tab">
         <div class="pt-3 pb-3">
             @using (Html.BeginForm("SaveTemplateSetup", "Template", FormMethod.Post, new { area = "Templates", id = "templateSetupForm", enctype = "multipart/form-data", @class = "" }))
             {
@@ -58,12 +58,12 @@
         </div>
     </div>
 
-    <div class="tab-pane fade" id="template-question" role="tabpanel" aria-labelledby="template-question-tab">
+    <div class="tab-pane fade @((ViewBag.ActiveTab == "Questions") ? "show active" : "")" id="template-question" role="tabpanel" aria-labelledby="template-question-tab">
         <div class="pt-3 pb-3">
             <button id="addQuestionBtn" class="btn btn-outline-success">Add New Question</button>
         </div>
+        <input type="hidden" asp-for="TemplateId" class="templateId" />
         <div id="question_list_sortable_placeholder">
-            <input type="hidden" asp-for="TemplateId" class="templateId" />            
             <partial name="~/Areas/Templates/Views/Shared/_TemplateQuestionList.cshtml" model="@Model?.Questions" />
         </div>
     </div>
@@ -73,15 +73,14 @@
 
 @section Scripts {
     <script>
+        var templateId = "";
         $('#addQuestionBtn').on('click', function () {
+            templateId = $('.templateId').val();
             $.ajax({
-                url: '/Templates/Question/SaveQuestionModal',
+                url: '/Templates/Question/SaveQuestionModal?questionId=' + 0 + '&templateId=' + templateId,
                 type: 'GET',
                 success: function (data) {
-                    console.log(data);
-                    $("#addQuestion_modal_placeholder").empty();
                     $("#addQuestion_modal_placeholder").html(data);
-                    $('#questionTemplateId').val($('.templateId').val());
                     $("#questionModal").modal('show');
                 },
                 error: function (e) {
@@ -92,12 +91,10 @@
 
         function editTemplateQuestion(questionId, templateId) {
             $.ajax({
-                url: '/Templates/Question/SaveQuestionModal?questionId=' + questionId,
+                url: '/Templates/Question/SaveQuestionModal?questionId=' + questionId + '&templateId=' + templateId,
                 type: 'GET',
                 success: function (data) {
-                    $("#addQuestion_modal_placeholder").empty();
                     $("#addQuestion_modal_placeholder").html(data);
-                    $('#questionTemplateId').val($('.templateId').val());
                     $("#questionModal").modal('show');
                 },
                 error: function (e) {

@@ -80,18 +80,23 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
+            var role = (model.Email == "admin@gmail.com") ? Enums.AppRoleEnums.Admin.ToString() : Enums.AppRoleEnums.User.ToString();
             var user = new ApplicationUser
             {
                 UserName = model.Email,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
+                RoleName = role
             };
+
+            if (model.Email == "admin@gmail.com")
+                user.Id = "8633AB4D-6FD5-4862-91AA-DD9CD10D150E";
             var result = await userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                await userManager.AddToRoleAsync(user, Enums.AppRoleEnums.User.ToString());
+                await userManager.AddToRoleAsync(user, role);
                 await signInManager.PasswordSignInAsync(user?.UserName, model.Password, false, false);
                 if (signInManager.IsSignedIn(User) && User.IsInRole(Enums.AppRoleEnums.Admin.ToString()))
                     return RedirectToAction("ListOfAllUsers", "Administration");

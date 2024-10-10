@@ -359,11 +359,9 @@ namespace ExamForms.Migrations.ExamFormDb
 
             modelBuilder.Entity("ExamForms.Models.Question", b =>
                 {
-                    b.HasOne("ExamForms.Models.Template", "Template")
+                    b.HasOne("ExamForms.Models.Template", null)
                         .WithMany("Questions")
                         .HasForeignKey("TemplateId");
-
-                    b.Navigation("Template");
                 });
 
             modelBuilder.Entity("ExamForms.Models.QuestionOption", b =>

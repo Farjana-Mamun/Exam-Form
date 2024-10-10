@@ -79,5 +79,17 @@ namespace ExamForms.Repository
                 throw;
             }
         }
+
+        public async Task<List<Question>> GetQuestionsByTemplateId(int id)
+        {
+            try
+            {
+                return await context.Questions.Where(x => x.TemplateId == id).ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

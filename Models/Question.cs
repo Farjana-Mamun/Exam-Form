@@ -21,5 +21,5 @@ public partial class Question
 
     public int? DisplayOrder { get; set; }
 
-    public virtual Template? Template { get; set; }
+    //public virtual Template? Template { get; set; }
 }

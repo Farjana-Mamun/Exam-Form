@@ -75,35 +75,35 @@ $('#templateQuestionForm').on('submit', function (e) {
     });
 });
 
-$('#templateSetupForm').on('submit', function (e) {
-    e.preventDefault();
-    var formData = new FormData($(this)[0]);
-    var tagList = tagify.value.map(tag => tag.value).join(',');
-    formData.append("Tags", tagList);
+//$('#templateSetupForm').on('submit', function (e) {
+//    e.preventDefault();
+//    var formData = new FormData($(this)[0]);
+//    var tagList = tagify.value.map(tag => tag.value).join(',');
+//    formData.append("Tags", tagList);
 
-    if ($("#templateImage")[0].files[0] != null) {
-        formData.append("Image", $("#templateImage")[0].files[0]);
-    } else {
-        formData.append("Image", $("#editTemplateImage").val());
-    }
+//    if ($("#templateImage")[0].files[0] != null) {
+//        formData.append("Image", $("#templateImage")[0].files[0]);
+//    } else {
+//        formData.append("Image", $("#editTemplateImage").val());
+//    }
 
-    $.ajax({
-        url: '/Templates/Template/SaveTemplateSetup',
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function (response) {
-            if (response.message === "Success") {
-                templateId = response.id;
-                new bootstrap.Tab($('#template-question-tab')).show();
-            }
-        },
-        error: function (xhr, status, error) {
-            console.error("AJAX Error:", error);
-        }
-    });
-});
+//    $.ajax({
+//        url: '/Templates/Template/SaveTemplateSetup',
+//        type: 'POST',
+//        data: formData,
+//        contentType: false,
+//        processData: false,
+//        success: function (response) {
+//            if (response.message === "Success") {
+//                templateId = response.id;
+//                new bootstrap.Tab($('#template-question-tab')).show();
+//            }
+//        },
+//        error: function (xhr, status, error) {
+//            console.error("AJAX Error:", error);
+//        }
+//    });
+//});
 
 function questionTypeEvent(element) {
     if (element.value == 4) {

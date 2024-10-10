@@ -15,9 +15,9 @@ public partial class FormViewModel
 
     public int TemplateId { get; set; }
 
-    public int UserId { get; set; }
+    public string SubmittedBy { get; set; }
 
-    public DateTime SubmittedAt { get; set; }
+    public DateTime SubmittedDate { get; set; }
 
     public virtual IEnumerable<QuestionViewModel> Questions { get; set; } = new List<QuestionViewModel>();
     public virtual IEnumerable<AnswerViewModel> Answers { get; set; } = new List<AnswerViewModel>();

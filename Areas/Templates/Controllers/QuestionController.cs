@@ -33,23 +33,6 @@ namespace ExamForms.Areas.Templates.Controllers
         public IActionResult AddQuestionCheckbox(int questionType)
         {
             QuestionViewModel questionViewModel = new QuestionViewModel();
-            //if (questionType == ((int)Enums.TemplateQuestionTypeEnum.Checkbox))
-            //{
-            //    List<QuestionOptionViewModel> detail = new List<QuestionOptionViewModel>();
-            //    detail.Add(new QuestionOptionViewModel()
-            //    {
-            //        QuestionOptionId = 1,
-            //        OptionName = "Yes",
-            //        IsCorrectAnswer = true,
-            //    });
-            //    detail.Add(new QuestionOptionViewModel()
-            //    {
-            //        QuestionOptionId = 2,
-            //        OptionName = "No",
-            //        IsCorrectAnswer = false,
-            //    });
-            //    questionViewModel.QuestionOptions = detail;
-            //}
             return PartialView("~/Areas/Templates/Views/Shared/_AddQuestionCheckboxModal.cshtml", questionViewModel);
         }
 
@@ -62,7 +45,7 @@ namespace ExamForms.Areas.Templates.Controllers
                 model.QuestionId = await questionManager.UpdateTemplateQuestionAsync(model, User.Identity);
 
             List<QuestionViewModel> questions = new List<QuestionViewModel>();
-            questions = await questionManager.GetAllQuestionsAsync();
+            questions = await questionManager.GetQuestionsByTemplateIdAsync(model.TemplateId);
 
             return PartialView("~/Areas/Templates/Views/Shared/_TemplateQuestionList.cshtml", questions);
         }

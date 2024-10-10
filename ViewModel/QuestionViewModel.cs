@@ -10,7 +10,6 @@ public partial class QuestionViewModel
 {
     public QuestionViewModel()
     {
-        Template = new TemplateViewModel();
         QuestionOptions = new List<QuestionOptionViewModel>
         {
             new QuestionOptionViewModel
@@ -47,6 +46,4 @@ public partial class QuestionViewModel
 
     public TemplateQuestionTypeEnum QuestionTypeEnum { get; set; }
     public virtual IEnumerable<QuestionOptionViewModel> QuestionOptions { get; set; } = new List<QuestionOptionViewModel>();
-
-    public virtual TemplateViewModel? Template { get; set; } = null!;
 }

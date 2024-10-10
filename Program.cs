@@ -37,10 +37,12 @@ builder.Services.AddTransient<AccountManager>();
 builder.Services.AddTransient<AdministrationManager>();
 builder.Services.AddTransient<TemplateManager>();
 builder.Services.AddTransient<QuestionManager>();
+builder.Services.AddTransient<FormsManager>();
 
 builder.Services.AddTransient<UserRepository>();
 builder.Services.AddTransient<TemplateRepository>();
 builder.Services.AddTransient<QuestionRepository>();
+builder.Services.AddTransient<FormsRepository>();
 
 var app = builder.Build();
 

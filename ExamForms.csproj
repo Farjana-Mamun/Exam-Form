@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Templates\Data\**" />
+    <Compile Remove="Areas\Templates\Models\**" />
+    <Content Remove="Areas\Templates\Data\**" />
+    <Content Remove="Areas\Templates\Models\**" />
+    <EmbeddedResource Remove="Areas\Templates\Data\**" />
+    <EmbeddedResource Remove="Areas\Templates\Models\**" />
+    <None Remove="Areas\Templates\Data\**" />
+    <None Remove="Areas\Templates\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
@@ -29,8 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Templates\Data\" />
-    <Folder Include="Areas\Templates\Models\" />
     <Folder Include="wwwroot\images\templateImages\" />
   </ItemGroup>
 

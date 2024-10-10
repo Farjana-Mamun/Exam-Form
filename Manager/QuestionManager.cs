@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ExamForms.Constants;
 using ExamForms.Models;
 using ExamForms.Repository;
 using ExamForms.ViewModel;
@@ -80,6 +81,29 @@ namespace ExamForms.Manager
                 if (question != null)
                     questionViewModel = mapper.Map<QuestionViewModel>(question);
                 questionViewModel.QuestionOptions = questionOptions;
+                return questionViewModel;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<List<QuestionViewModel>> GetQuestionsByTemplateIdAsync(int id)
+        {
+            try
+            {
+                List<QuestionViewModel> questionViewModel = new List<QuestionViewModel>();
+                var questionOptions = questionViewModel.FirstOrDefault()?.QuestionOptions;
+                var question = await questionRepository.GetQuestionsByTemplateId(id);
+                if (question != null)
+                    questionViewModel = mapper.Map<List<QuestionViewModel>>(question);
+
+                foreach (var item in questionViewModel)
+                {
+                    if (item.QuestionType == Enums.TemplateQuestionTypeEnum.Checkbox.ToString())
+                        item.QuestionOptions = questionOptions;
+                }
                 return questionViewModel;
             }
             catch (Exception)

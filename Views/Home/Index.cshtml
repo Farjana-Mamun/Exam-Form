@@ -12,16 +12,16 @@
         {
             if (template != null && !string.IsNullOrEmpty(template.Title) && !string.IsNullOrEmpty(template.Image))
             {
-                <div class="col-md-3">
+                <a class="col-md-3 text-decoration-none" href="@Url.Action("Details", "Template", new { area = "Templates", id = template.TemplateId })">
                     <div class="card mb-4 shadow-sm h-100">
                         <img src="@template.Image" class="card-img-top template-img" alt="Template Image">
                         <div class="card-body">
-                            <h5 class="card-title">@template.Title</h5>
+                            <h5 class="card-title text-decoration-none">@template.Title</h5>
                             @Html.Raw(@template.Description)
                             <p class="card-text"><small class="text-muted">Author: @template.CreatedBy</small></p>
                         </div>
                     </div>
-                </div>
+                </a>
             }
         }
     </div>
