@@ -49,5 +49,11 @@ namespace ExamForms.Repository
                 throw;
             }
         }
+        public async Task<List<Form>> GetSubmittedFormsByTemplateIdAsync(int templateId)
+        {
+            return await context.Forms
+                .Where(f => f.TemplateId == templateId && f.SubmittedDate.HasValue)
+                .ToListAsync();
+        }
     }
 }

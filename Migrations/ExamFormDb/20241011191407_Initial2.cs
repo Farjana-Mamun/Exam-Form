@@ -88,8 +88,8 @@ namespace ExamForms.Migrations.ExamFormDb
                     FormId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TemplateId = table.Column<int>(type: "int", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: true),
-                    SubmittedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    SubmittedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SubmittedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {

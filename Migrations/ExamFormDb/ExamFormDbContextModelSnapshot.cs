@@ -84,13 +84,13 @@ namespace ExamForms.Migrations.ExamFormDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FormId"));
 
-                    b.Property<DateTime?>("SubmittedAt")
+                    b.Property<string>("SubmittedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("SubmittedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("TemplateId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("FormId");

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Principal;
 
 namespace ExamForms.Areas.Templates.Controllers
 {
@@ -14,13 +15,16 @@ namespace ExamForms.Areas.Templates.Controllers
         private readonly IWebHostEnvironment webHostEnvironment;
         public readonly TemplateManager templateManager;
         private readonly QuestionManager questionManager;
+        internal readonly FormsManager formsManager;
 
         public TemplateController(TemplateManager _templateManager
             , QuestionManager questionManager
+            , FormsManager formsManager
             , IWebHostEnvironment _webHostEnvironment)
         {
             templateManager = _templateManager;
             this.questionManager = questionManager;
+            this.formsManager = formsManager;
             webHostEnvironment = _webHostEnvironment;
         }
         public async Task<IActionResult> Index()
@@ -75,12 +79,16 @@ namespace ExamForms.Areas.Templates.Controllers
             var template = await templateManager.GetTemplateByIdAsync(id);
             var comments = await templateManager.GetCommentsByTemplateIdAsync(id);
             var likes = await templateManager.GetLikesByTemplateIdAsync(id);
+            var questions = await questionManager.GetQuestionsByTemplateIdAsync(id);
+            var submitForms = await formsManager.GetFormsByTemplateIdAsync(id);
 
             var templateDetailsViewModel = new TemplateDetailsViewModel
             {
                 Template = template,
                 Comments = comments,
-                LikesCount = likes.Count
+                LikesCount = likes.Count,
+                Questions = questions,
+                SubmittedForms = submitForms,
             };
 
             return View(templateDetailsViewModel);
@@ -100,5 +108,6 @@ namespace ExamForms.Areas.Templates.Controllers
             return RedirectToAction("Details", new { id = like.TemplateId });
         }
 
+        
     }
 }

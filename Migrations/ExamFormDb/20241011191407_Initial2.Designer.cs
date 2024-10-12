@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExamForms.Migrations.ExamFormDb
 {
     [DbContext(typeof(ExamFormDbContext))]
-    [Migration("20241010070408_Initial2")]
+    [Migration("20241011191407_Initial2")]
     partial class Initial2
     {
         /// <inheritdoc />
@@ -87,13 +87,13 @@ namespace ExamForms.Migrations.ExamFormDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FormId"));
 
-                    b.Property<DateTime?>("SubmittedAt")
+                    b.Property<string>("SubmittedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("SubmittedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("TemplateId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("FormId");

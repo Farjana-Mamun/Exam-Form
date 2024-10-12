@@ -32,6 +32,87 @@
 
     <hr />
 
+    <!-- Tabs for Template Setup, Template Questions, and Submitted Form List -->
+    <ul class="nav nav-tabs" id="templateTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link @(ViewData["ActiveTab"]?.ToString() == "Setup" ? "active" : "")"
+               id="setup-tab" data-toggle="tab" href="@Url.Action("SaveTemplate", "Template")" role="tab" aria-controls="setup" aria-selected="true">Template Setup</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link @(ViewData["ActiveTab"]?.ToString() == "Questions" ? "active" : "")"
+               id="questions-tab" data-toggle="tab" href="@Url.Action("TemplateQuestions", "Template")" role="tab" aria-controls="questions" aria-selected="false">Template Questions</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link @(ViewData["ActiveTab"]?.ToString() == "SubmittedForms" ? "active" : "")"
+               id="submitted-forms-tab" data-toggle="tab" href="@Url.Action("SubmittedForms","Template")" role="tab" aria-controls="submitted-forms" aria-selected="false">Submitted Forms</a>
+        </li>
+    </ul>
+
+  @*   <ul class="nav nav-tabs" id="templateTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link @(ViewData["ActiveTab"]?.ToString() == "Setup" ? "active" : "")"
+               asp-action="SaveTemplate" asp-controller="Template" asp-area="Templates" role="tab" aria-controls="setup" aria-selected="true">Template Setup</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link @(ViewData["ActiveTab"]?.ToString() == "Questions" ? "active" : "")"
+               asp-action="AddTemplateQuestion" asp-controller="Question" asp-area="Templates" role="tab" aria-controls="questions" aria-selected="false">Template Questions</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link @(ViewData["ActiveTab"]?.ToString() == "SubmittedForms" ? "active" : "")"
+               asp-action="SubmitForm" asp-controller="Form" asp-area="Templates" role="tab" aria-controls="submitted-forms" aria-selected="false">Submitted Forms</a>
+        </li>
+    </ul> *@
+
+
+    <div class="tab-content" id="templateTabContent">
+        <!-- Template Setup Tab -->
+        <div class="tab-pane fade @(ViewData["ActiveTab"]?.ToString() == "Setup" ? "show active" : "")" id="setup" role="tabpanel" aria-labelledby="setup-tab">
+            <h3>Template Setup</h3>
+            <p>Here you can display and manage the template setup details.</p>
+            <!-- Add more template setup content here -->
+        </div>
+
+        <!-- Template Questions Tab -->
+        <div class="tab-pane fade @(ViewData["ActiveTab"]?.ToString() == "Questions" ? "show active" : "")" id="questions" role="tabpanel" aria-labelledby="questions-tab">
+            <h3>Template Questions</h3>
+            <p>Here you can display and manage the questions for this template.</p>
+            <!-- Add questions-related content here -->
+        </div>
+
+        <!-- Submitted Forms Tab -->
+        <div class="tab-pane fade @(ViewData["ActiveTab"]?.ToString() == "SubmittedForms" ? "show active" : "")" id="submitted-forms" role="tabpanel" aria-labelledby="submitted-forms-tab">
+            <h3>Submitted Forms</h3>
+            @if (Model.SubmittedForms != null && Model.SubmittedForms.Any())
+            {
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Submitted By</th>
+                            <th>Submitted On</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var form in Model.SubmittedForms)
+                        {
+                            <tr>
+                                <td>@form.SubmittedBy</td>
+                                <td>@form.SubmittedDate.ToShortDateString()</td>
+                                <td>
+                                    <a href="@Url.Action("FormDetails", "Forms", new { formId = form.FormId })" class="btn btn-info btn-sm">View Details</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No forms have been submitted yet.</p>
+            }
+        </div>
+    </div>
+
     <!-- Comment Section -->
     <h3>Comments</h3>
     <div class="comments-section mb-4">
@@ -71,4 +152,3 @@
     </script>
 
 </div>
-
