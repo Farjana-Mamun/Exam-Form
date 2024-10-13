@@ -33,10 +33,17 @@ namespace ExamForms.Areas.Templates.Controllers
             return View(formViewModel);
         }
 
+        [HttpPost]
         public async Task<IActionResult> SubmitForm(FormViewModel model)
         {
             await formManager.SaveFormAsync(model, User.Identity);
             return View();
+        }
+
+        public async Task<IActionResult> DetailsTemplateForm(int formId, int templateId)
+        {
+            FormViewModel form =  await formManager.GetFormByIdAsync(formId, templateId);
+            return PartialView("~/Areas/Templates/Views/Shared/_TemplateFormDetailsModal.cshtml", form);
         }
     }
 }

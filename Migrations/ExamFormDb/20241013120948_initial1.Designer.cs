@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExamForms.Migrations.ExamFormDb
 {
     [DbContext(typeof(ExamFormDbContext))]
-    [Migration("20241011191407_Initial2")]
-    partial class Initial2
+    [Migration("20241013120948_initial1")]
+    partial class initial1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

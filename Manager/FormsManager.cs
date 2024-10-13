@@ -9,12 +9,15 @@ namespace ExamForms.Manager
     public class FormsManager
     {
         private readonly FormsRepository formRepository;
+        private readonly QuestionRepository questionRepository;
         private readonly IMapper mapper;
 
         public FormsManager(FormsRepository formRepository
+            , QuestionRepository questionRepository
             , IMapper mapper)
         {
             this.formRepository = formRepository;
+            this.questionRepository = questionRepository;
             this.mapper = mapper;
         }
 
@@ -31,12 +34,16 @@ namespace ExamForms.Manager
             }
         }
 
-        public async Task<FormViewModel> GetFormByIdAsync(int id)
+        public async Task<FormViewModel> GetFormByIdAsync(int id, int templateId)
         {
             try
             {
+                FormViewModel formViewModel = new FormViewModel();
                 Form form = await formRepository.GetFormById(id);
-                return mapper.Map<FormViewModel>(form);
+                var questions = await questionRepository.GetQuestionsByTemplateId(templateId);
+                formViewModel = mapper.Map<FormViewModel>(form);
+                formViewModel.Questions = mapper.Map<List<QuestionViewModel>>(questions);
+                return formViewModel;
             }
             catch (Exception)
             {
@@ -58,6 +65,6 @@ namespace ExamForms.Manager
                 throw;
             }
         }
-        
+
     }
 }

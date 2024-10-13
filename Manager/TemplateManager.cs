@@ -12,12 +12,18 @@ namespace ExamForms.Manager
     public class TemplateManager
     {
         private readonly TemplateRepository templateRepository;
+        private readonly QuestionRepository questionRepository;
+        private readonly FormsRepository formsRepository;
         private readonly IMapper mapper;
 
         public TemplateManager(TemplateRepository templateRepository
+            , QuestionRepository questionRepository
+            , FormsRepository formsRepository
             , IMapper mapper)
         {
             this.templateRepository = templateRepository;
+            this.questionRepository = questionRepository;
+            this.formsRepository = formsRepository;
             this.mapper = mapper;
         }
 
@@ -169,6 +175,30 @@ namespace ExamForms.Manager
             {
                 var likeEntity = mapper.Map<Like>(like);
                 return await templateRepository.AddLike(likeEntity);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<TemplateViewModel> GetTemplateAllDetailsAsync(int id)
+        {
+            try
+            {
+                TemplateViewModel templateViewModel = new TemplateViewModel();
+                var template = await templateRepository.GetTemplateById(id);
+                var comments = await templateRepository.GetCommentsByTemplateId(id);
+                var likes = await templateRepository.GetLikesByTemplateId(id);
+                var questions = await questionRepository.GetQuestionsByTemplateId(id);
+                var submitForms = await formsRepository.GetFormsByTemplateId(id);
+
+                templateViewModel = mapper.Map<TemplateViewModel>(template);
+                templateViewModel.Comments = mapper.Map<List<CommentViewModel>>(comments);
+                templateViewModel.Likes = mapper.Map<List<LikeViewModel>>(likes);
+                templateViewModel.Questions = mapper.Map<List<QuestionViewModel>>(questions);
+                templateViewModel.Forms = mapper.Map<List<FormViewModel>>(submitForms);
+                return templateViewModel;
             }
             catch (Exception)
             {

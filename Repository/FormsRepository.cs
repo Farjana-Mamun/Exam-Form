@@ -29,7 +29,7 @@ namespace ExamForms.Repository
         {
             try
             {
-                return await context.Forms.Where(x => x.FormId == id).FirstOrDefaultAsync();
+                return await context.Forms.Where(x => x.FormId == id).Include(f => f.Answers).FirstOrDefaultAsync();
             }
             catch (Exception)
             {

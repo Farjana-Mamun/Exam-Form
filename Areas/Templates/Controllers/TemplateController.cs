@@ -74,24 +74,28 @@ namespace ExamForms.Areas.Templates.Controllers
             await templateManager.DeleteTemplateAsync(id);
             return RedirectToAction(nameof(Index));
         }
+
         public async Task<IActionResult> Details(int id)
         {
             var template = await templateManager.GetTemplateByIdAsync(id);
             var comments = await templateManager.GetCommentsByTemplateIdAsync(id);
             var likes = await templateManager.GetLikesByTemplateIdAsync(id);
-            var questions = await questionManager.GetQuestionsByTemplateIdAsync(id);
-            var submitForms = await formsManager.GetFormsByTemplateIdAsync(id);
 
             var templateDetailsViewModel = new TemplateDetailsViewModel
             {
                 Template = template,
                 Comments = comments,
-                LikesCount = likes.Count,
-                Questions = questions,
-                SubmittedForms = submitForms,
+                LikesCount = likes.Count
             };
 
             return View(templateDetailsViewModel);
+        }
+
+        public async Task<IActionResult> TemplateDetails(int id)
+        {
+            var templete = await templateManager.GetTemplateAllDetailsAsync(id);
+            ViewBag.TemplateStatus = "Read-Only";
+            return View(templete);
         }
 
         [HttpPost]

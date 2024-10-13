@@ -176,6 +176,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\templateImages\01031068-96cb-48bd-8c4c-309a2fb8a60a460501922_1596952537843141_1912210041017127707_n.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\templateImages\01dddd6c-8b42-4846-970e-8524fbfc36d0460501922_1596952537843141_1912210041017127707_n.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ExamForms</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ExamForms</BasePath>
+      <RelativePath>images/templateImages/01dddd6c-8b42-4846-970e-8524fbfc36d0460501922_1596952537843141_1912210041017127707_n.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\templateImages\01dddd6c-8b42-4846-970e-8524fbfc36d0460501922_1596952537843141_1912210041017127707_n.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\templateImages\072989a0-f9ac-4e06-a3aa-82be44f85e27399810702_3626021167719263_3508352411570846729_n2.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ExamForms</SourceId>
